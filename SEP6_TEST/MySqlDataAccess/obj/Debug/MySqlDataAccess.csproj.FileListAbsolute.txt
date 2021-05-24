@@ -1,0 +1,12 @@
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\MySqlDataAccess.dll.config
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\MySqlDataAccess.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\MySqlDataAccess.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\EntityFramework.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\EntityFramework.xml
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\obj\Debug\MySqlDataAccess.csprojAssemblyReference.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\obj\Debug\MySqlDataAccess.csproj.CoreCompileInputs.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\obj\Debug\MySqlDataAccess.csproj.CopyComplete
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\obj\Debug\MySqlDataAccess.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\MySqlDataAccess\obj\Debug\MySqlDataAccess.pdb

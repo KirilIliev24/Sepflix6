@@ -1,0 +1,298 @@
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\appsettings.json
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.exe
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.deps.json
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.runtimeconfig.json
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.runtimeconfig.dev.json
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.Views.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.Views.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Humanizer.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csprojAssemblyReference.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.AssemblyInfoInputs.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.AssemblyInfo.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csproj.CoreCompileInputs.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.MvcApplicationPartsAssemblyInfo.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorComponent.input.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorComponent.output.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP6_TEST.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.TagHelpers.input.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.TagHelpers.output.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorCoreGenerate.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorAssemblyInfo.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorAssemblyInfo.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\staticwebassets\SEP6_TEST.StaticWebAssets.Manifest.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\staticwebassets\SEP6_TEST.StaticWebAssets.xml
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\bundle\SEP6_TEST.styles.css
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorTargetAssemblyInfo.cache
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorTargetAssemblyInfo.cs
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.Views.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csproj.CopyComplete
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.dll
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.pdb
+D:\VIA\6th semester\SEP 6\Testing\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.genruntimeconfig.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\appsettings.json
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.exe
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.deps.json
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.runtimeconfig.json
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.runtimeconfig.dev.json
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.Views.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.Views.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Humanizer.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csprojAssemblyReference.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.AssemblyInfoInputs.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.AssemblyInfo.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csproj.CoreCompileInputs.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.MvcApplicationPartsAssemblyInfo.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorComponent.input.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorComponent.output.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP6_TEST.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.TagHelpers.input.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.TagHelpers.output.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorCoreGenerate.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorAssemblyInfo.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorAssemblyInfo.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\staticwebassets\SEP6_TEST.StaticWebAssets.Manifest.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\staticwebassets\SEP6_TEST.StaticWebAssets.xml
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\bundle\SEP6_TEST.styles.css
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorTargetAssemblyInfo.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorTargetAssemblyInfo.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.Views.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csproj.CopyComplete
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.dll
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.pdb
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.genruntimeconfig.cache
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\MoviePageComponent.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Components\MoviePageComponent.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\MovieHolderComponent.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Components\MovieHolderComponent.razor.g.cs
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.StaticWebAssets.xml
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\Components\MoviePageComponent.razor.rz.scp.css
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\projectbundle\SEP6_TEST.bundle.scp.css
+D:\SEP6\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\Components\MovieHolderComponent.razor.rz.scp.css
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.StaticWebAssets.xml
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.exe
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.deps.json
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.runtimeconfig.json
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.runtimeconfig.dev.json
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.Views.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\SEP6_TEST.Views.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csprojAssemblyReference.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.AssemblyInfoInputs.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.AssemblyInfo.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csproj.CoreCompileInputs.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorComponent.input.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\MovieHolderComponent.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\MoviePageComponent.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorComponent.output.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP6_TEST.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.TagHelpers.input.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.TagHelpers.output.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorCoreGenerate.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Components\MovieHolderComponent.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Components\MoviePageComponent.razor.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorAssemblyInfo.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorAssemblyInfo.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\staticwebassets\SEP6_TEST.StaticWebAssets.Manifest.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\staticwebassets\SEP6_TEST.StaticWebAssets.xml
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\Components\MovieHolderComponent.razor.rz.scp.css
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\Components\MoviePageComponent.razor.rz.scp.css
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\bundle\SEP6_TEST.styles.css
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\scopedcss\projectbundle\SEP6_TEST.bundle.scp.css
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorTargetAssemblyInfo.cache
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.RazorTargetAssemblyInfo.cs
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.Views.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.csproj.CopyComplete
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.dll
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.pdb
+C:\Users\Harry\OneDrive\Documents\VIA\SEP06\SEP6BlazorAppMain\Sep6BlazorApp\SEP6_TEST\SEP6_TEST\obj\Debug\netcoreapp3.1\SEP6_TEST.genruntimeconfig.cache

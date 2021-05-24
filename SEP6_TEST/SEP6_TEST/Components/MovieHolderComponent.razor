@@ -1,0 +1,20 @@
+﻿@page "/moviecontainer"
+@using SEP6_TEST.Models;
+
+
+<div class="card text-white bg-transparent border-info mb-3" style="width: 18rem;">
+    <img class="card-img-top" src="/Images/diesel.png" alt="Movie Image">
+    <div class="card-body">
+        <h5 class="card-title">@movie.Title</h5>
+    </div>
+    <div class="card-footer bg-transparent border-info">
+        <h6>Year: @movie.Year</h6>
+        <h6>Rating: @movie.rating.Rating1/10 out of @movie.rating.Votes ratings</h6>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public Movie movie { get; set; }
+    
+}

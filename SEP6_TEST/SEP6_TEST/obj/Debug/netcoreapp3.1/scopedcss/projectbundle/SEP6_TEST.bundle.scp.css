@@ -1,0 +1,12 @@
+@import '';
+
+/* _content/SEP6_TEST/Components/MovieHolderComponent.razor.rz.scp.css */
+/* _content/SEP6_TEST/Components/MoviePageComponent.razor.rz.scp.css */
+body[b-98x705o2uy] {
+    background-color: #3a0647;
+    color:black;
+}
+
+.card bg-info text-white mr-2[b-98x705o2uy] {
+    margin-top:10px;
+}

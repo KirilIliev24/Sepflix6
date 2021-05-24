@@ -1,0 +1,68 @@
+﻿@page  "/movie"
+
+<h1 style="text-align:center">@MovieTitle</h1>
+<h6 style="text-align:center">Directed by @Director</h6>
+
+<br />
+<img style="margin-left:auto;margin-right:auto;display: block;" src="/Images/diesel.png" alt="MovieImage" />
+<br />
+
+
+<div class="card bg-info text-white">
+    <h5 class="card-header text-center ">Actors</h5>
+    <h5 class="card-text text-center mb-2 mt-2">@Actors</h5>
+</div>
+
+<br/>
+
+<div class="card bg-info text-white mb-3">
+    <h5 class="card-header text-center">Description</h5>
+    <h5 class="card-text text-center mb-2 mt-2">@MovieDesc</h5>
+</div>
+
+<br />
+
+<div class="card bg-info text-white align-items-center">
+    <h5 class="card-header text-center">Rated @Rating by viewers</h5>
+    <div class="card-body">
+        <h5 class="card-title text-center">@Votes ratings in total</h5>
+
+        <div class="card-footer">
+            <p class="card-text text-center">Your Rating</p>
+            <div class="btn-group float-none" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary border-info">1</button>
+                <button type="button" class="btn btn-secondary border-info">2</button>
+                <button type="button" class="btn btn-secondary border-info">3</button>
+                <button type="button" class="btn btn-secondary border-info">4</button>
+                <button type="button" class="btn btn-secondary border-info">5</button>
+                <button type="button" class="btn btn-secondary border-info">6</button>
+                <button type="button" class="btn btn-secondary border-info">7</button>
+                <button type="button" class="btn btn-secondary border-info">8</button>
+                <button type="button" class="btn btn-secondary border-info">9</button>
+                <button type="button" class="btn btn-secondary border-info">10</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<br />
+
+<div style="text-align:center;margin-bottom:10px">
+    <div class="btn-group-lg float-none" role="group" aria-label="Second group">
+        <button type="button" class="btn btn-warning">Add To Favotites</button>
+        <button type="button" class="btn btn-info">Add To Watchlist</button>
+    </div>
+    </div>
+
+
+    @code {
+        string MovieTitle = "MovieTitle";
+        string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
+        string Actors = "Bob, roocs, aosndlaskn, ,asndlknkfa, ,as";
+        string Director = "Harambe";
+        string Rating = "5.6";
+        string Votes = "321";
+    }
