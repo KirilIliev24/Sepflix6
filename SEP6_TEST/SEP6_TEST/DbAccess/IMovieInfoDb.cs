@@ -9,5 +9,8 @@ namespace SEP6_TEST.DbAccess
     {
         public List<MovieDTO> MovieDTOs { get; }
         public Task GetAllMovies();
+
+        public Task<MovieDTO> getMovieByID(int id);
+
     }
 }

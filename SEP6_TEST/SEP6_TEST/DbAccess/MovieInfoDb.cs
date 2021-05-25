@@ -36,6 +36,49 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
+        public async Task<MovieDTO> getMovieByID(int id)
+        {
+            var movieDTO = new MovieDTO();
+            using (var context = new SqlServerSep6Context())
+            {
+
+                try
+                {
+                    movieDTO.Movie = context.Movies.Find(id);
+                    movieDTO.Rating =await getRating(id);
+                    return movieDTO;
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                    return movieDTO;
+                }
+            }
+        }
+
+        public async Task<Rating> getRating(int movieId)
+        {
+            var r = new Rating();
+            using (var context = new SqlServerSep6Context())
+            {
+                try
+                {
+                    double rating = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movieId).Select(p => p.Rating1).FirstOrDefault());
+                    int noOfVotes = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movieId).Select(p => p.Votes).FirstOrDefault());
+                    r.Rating1 = rating;
+                    r.Votes = noOfVotes;
+                    return r;
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                    return r;
+                }
+            }
+        }
+
         private async Task GetMovieRating()
         {
             using (var context = new SqlServerSep6Context())
