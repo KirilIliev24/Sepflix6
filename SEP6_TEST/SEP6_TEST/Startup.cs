@@ -32,6 +32,7 @@ namespace SEP6_TEST
             services.AddServerSideBlazor();
             services.AddScoped<IMovieAccessInfoApi, MovieInfoApi>(); //- scope is like Singleton, but for a specific client
             services.AddScoped<IMovieInfoDb, MovieInfoDb>();
+            services.AddScoped<IUserDb, UserDb>();
             services.AddHttpClient();
         }
 

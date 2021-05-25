@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SEP6_TEST.DTO;
 using SEP6_TEST.Models;
 
 namespace SEP6_TEST.DbAccess
 {
     public class MovieInfoDb : IMovieInfoDb
     {
-        public List<Movie> Movies { get; private set; } = new List<Movie>();
+        public List<MovieDTO> MovieDTOs { get; private set; } = new List<MovieDTO>();
 
         public async Task GetAllMovies()
         {
@@ -16,7 +17,16 @@ namespace SEP6_TEST.DbAccess
             {
                 try
                 {
-                    Movies = await Task.Run(() => context.Movies.Select(p => p).ToList());
+                    List<Movie> Movies = await Task.Run(() => context.Movies.Select(p => p).ToList());
+                   
+                    foreach (var movie in Movies)
+                    {
+                        MovieDTO movieDTO = new MovieDTO()
+                        {
+                            Movie = movie
+                        };
+                        MovieDTOs.Add(movieDTO);
+                    }
                     await GetMovieRating();
                 }
                 catch (Exception e)
@@ -32,12 +42,12 @@ namespace SEP6_TEST.DbAccess
             {
                 try
                 {
-                    foreach(var movie in Movies)
+                    foreach(var movieDTO in MovieDTOs)
                     {
-                        double rating = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movie.Id).Select(p => p.Rating1).FirstOrDefault());
-                        int noOfVotes = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movie.Id).Select(p => p.Votes).FirstOrDefault());
+                        double rating = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movieDTO.Movie.Id).Select(p => p.Rating1).FirstOrDefault());
+                        int noOfVotes = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movieDTO.Movie.Id).Select(p => p.Votes).FirstOrDefault());
 
-                        movie.rating = new Rating()
+                        movieDTO.Rating = new Rating()
                         {
                             Rating1 = rating,
                             Votes = noOfVotes

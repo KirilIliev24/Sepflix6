@@ -5,6 +5,7 @@
 @using SEP6_TEST.ApiModels
 @using SEP6_TEST.DbAccess
 @using SEP6_TEST.Components;
+@using SEP6_TEST.DTO;
 
 @inject IMovieAccessInfoApi movieApi
 @inject IMovieInfoDb moviesDb
@@ -26,30 +27,31 @@ else
 
         }*@
 
-    <MovieHolderComponent movie=@movie>
-    </MovieHolderComponent>
+    @*<MovieHolderComponent movie=@movie>
+    </MovieHolderComponent>*@
 
-    <img src="@poster.file_path" alt="Alternate Text" />
 }
 
 @code {
-    private List<Movie> Movies = new List<Movie>();
-
-    private List<MovieBaseInfo> MoviesBaseInfo = new List<MovieBaseInfo>();
-
-    private Poster poster = new Poster();
+    private List<MovieDTO> MovieDTOs = new List<MovieDTO>();
 
     private bool Loading = false;
 
     protected override async Task OnInitializedAsync()
     {
         Loading = true;
-        //await moviesDb.GetAllMovies();
-        //Movies = moviesDb.Movies;
+        await moviesDb.GetAllMovies();
+        MovieDTOs = moviesDb.MovieDTOs;
+
+        foreach (var movieDto in MovieDTOs)
+        {
+            await movieApi.GetMoviePosterAsync(movieDto.Movie.Id);
+            movieDto.Poster = movieApi.movieBaseInfo.posters.First().file_path;
+        }
 
         //await movieApi.GetMoviePosterAsync(15414);
         //await movieApi.GetMovieCreditsAsync(15414);
-        await movieApi.GetMoviePlotAsync(15414);
+        //await movieApi.GetMoviePlotAsync(15414);
 
         //poster = movieApi.posterLink;
 
@@ -58,5 +60,5 @@ else
         Loading = false;
     }
 
-    Movie movie = new Movie { Id = 1, rating = new Rating { MovieId = 1, Rating1 = 6.6, Votes = 245}, Title = "Fat & Furious 6", Year = 2025 };
+    //Movie movie = new Movie { Id = 1, rating = new Rating { MovieId = 1, Rating1 = 6.6, Votes = 245}, Title = "Fat & Furious 6", Year = 2025 };
 }
