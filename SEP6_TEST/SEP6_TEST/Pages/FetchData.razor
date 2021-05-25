@@ -28,6 +28,8 @@ else
 
     <MovieHolderComponent movie=@movie>
     </MovieHolderComponent>
+
+    <img src="@poster.file_path" alt="Alternate Text" />
 }
 
 @code {
@@ -35,13 +37,21 @@ else
 
     private List<MovieBaseInfo> MoviesBaseInfo = new List<MovieBaseInfo>();
 
+    private Poster poster = new Poster();
+
     private bool Loading = false;
 
     protected override async Task OnInitializedAsync()
     {
         Loading = true;
         //await moviesDb.GetAllMovies();
-        Movies = moviesDb.Movies;
+        //Movies = moviesDb.Movies;
+
+        //await movieApi.GetMoviePosterAsync(15414);
+        //await movieApi.GetMovieCreditsAsync(15414);
+        await movieApi.GetMoviePlotAsync(15414);
+
+        //poster = movieApi.posterLink;
 
         //should get the base info for every movie, add all async methods to a list and run them async
 

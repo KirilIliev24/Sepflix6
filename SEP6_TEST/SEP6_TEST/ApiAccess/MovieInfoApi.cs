@@ -12,25 +12,28 @@ namespace SEP6_TEST.ApiAccess
     {
         private HttpClient client;
         public MovieBaseInfo movieBaseInfo { get; private set; } = new MovieBaseInfo();
+        //public Poster posterLink { get; private set; } = new Poster();
 
         public MovieInfoApi(IHttpClientFactory httpClientFactory)
         {
             client = httpClientFactory.CreateClient();
         }
 
+        //maybe add a clear method and a call all method
 
-        public async Task GetMovieBaseInfoAsync(string movieId)
+        public async Task GetMoviePlotAsync(int movieId)
         {
             try
             {
                 client.DefaultRequestHeaders.Clear();
                 //maybe move these keys to the app settings
-                client.DefaultRequestHeaders.Add("x-rapidapi-key", "9e321c6e5cmshef2596f3bb0409dp1fa84djsn66631090335e");
-                client.DefaultRequestHeaders.Add("x-rapidapi-host", "imdb8.p.rapidapi.com");
 
-                var responce = await client.GetStringAsync($"https://imdb8.p.rapidapi.com/title/get-base?tconst={movieId}");
+                var responce = await client.GetStringAsync($"https://api.themoviedb.org/3/movie/{movieId}?api_key=de4ac8654829c3ed659e8a98438c14f9&language=en-US");
 
-                movieBaseInfo = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+                var plot = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+                var genre = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+                movieBaseInfo.overview = plot.overview;
+                movieBaseInfo.genres = genre.genres;
             }
             catch (Exception e)
             {
@@ -38,10 +41,75 @@ namespace SEP6_TEST.ApiAccess
             }
         }
 
-       
-        //https://imdb8.p.rapidapi.com/title/get-top-cast?tconst=tt0944947 - top cast for a movie
-        //https://imdb8.p.rapidapi.com/actors/get-bio?nconst=nm0001667 - persons bio
-        //https://imdb8.p.rapidapi.com/title/get-full-credits?tconst=tt0786945 - acst and crew in a movie
+        public async Task GetMoviePosterAsync(int movieId)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Clear();
+                //maybe move these keys to the app settings
+                //client.DefaultRequestHeaders.Add("api_key", "de4ac8654829c3ed659e8a98438c14f9");
 
+                var responce = await client.GetStringAsync($"https://api.themoviedb.org/3/movie/{movieId}/images?api_key=de4ac8654829c3ed659e8a98438c14f9");
+
+                var listOfPosterLinks = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+
+                string filePath = listOfPosterLinks.posters.First().file_path;
+
+                Poster posterLink = new Poster()
+                { 
+                    file_path = $"https://image.tmdb.org/t/p/w500/{filePath}"
+                };
+                movieBaseInfo.posters.Add(posterLink);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public async Task GetMovieCreditsAsync(int movieId)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Clear();
+                //maybe move these keys to the app settings
+                client.DefaultRequestHeaders.Add("api_key", "de4ac8654829c3ed659e8a98438c14f9");
+
+                var responce = await client.GetStringAsync($"https://api.themoviedb.org/3/movie/{movieId}/credits?api_key=de4ac8654829c3ed659e8a98438c14f9&language=en-US");
+
+                var crewMembers = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+                var castMembers = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+
+                movieBaseInfo.crew = crewMembers.crew;
+                movieBaseInfo.cast = castMembers.cast;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public async Task GetMovieReviewsAsync(int movieId)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Clear();
+                //maybe move these keys to the app settings
+                client.DefaultRequestHeaders.Add("api_key", "de4ac8654829c3ed659e8a98438c14f9");
+
+                var responce = await client.GetStringAsync($"https://api.themoviedb.org/3/movie/{movieId}/reviews?api_key=de4ac8654829c3ed659e8a98438c14f9&language=en-US");
+
+                var results = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
+
+                movieBaseInfo.results = results.results;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }
