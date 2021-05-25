@@ -27,8 +27,5 @@ namespace SEP6_TEST.Models
 
         [InverseProperty(nameof(MovieReview.Movie))]
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
-
-        [NotMapped]
-        public Rating rating { get; set; }
     }
 }

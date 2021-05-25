@@ -17,16 +17,14 @@ namespace SEP6_TEST.Models
         }
 
         [Key]
-        [Column("user_id")]
-        public int UserId { get; set; }
-        [Required]
+        [Column("username")]
         [StringLength(30)]
         public string Username { get; set; }
         [Required]
         [StringLength(255)]
         public string Password { get; set; }
 
-        [InverseProperty(nameof(MovieReview.User))]
+        [InverseProperty(nameof(MovieReview.UsernameNavigation))]
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
     }
 }

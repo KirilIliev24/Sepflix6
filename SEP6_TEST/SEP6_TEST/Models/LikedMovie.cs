@@ -12,14 +12,16 @@ namespace SEP6_TEST.Models
     [Table("likedMovies")]
     public partial class LikedMovie
     {
-        [Column("user_id")]
-        public int UserId { get; set; }
+        [Required]
+        [Column("username")]
+        [StringLength(30)]
+        public string Username { get; set; }
         [Column("movie_id")]
         public int MovieId { get; set; }
 
         [ForeignKey(nameof(MovieId))]
         public virtual Movie Movie { get; set; }
-        [ForeignKey(nameof(UserId))]
-        public virtual User User { get; set; }
+        [ForeignKey(nameof(Username))]
+        public virtual User UsernameNavigation { get; set; }
     }
 }
