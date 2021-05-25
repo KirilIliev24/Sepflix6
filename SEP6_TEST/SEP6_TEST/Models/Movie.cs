@@ -24,6 +24,8 @@ namespace SEP6_TEST.Models
         public string Title { get; set; }
         [Column("year")]
         public int Year { get; set; }
+        [Column("poster")]
+        public string Poster { get; set; }
 
         [InverseProperty(nameof(MovieReview.Movie))]
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
