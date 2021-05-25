@@ -9,14 +9,17 @@ using Microsoft.EntityFrameworkCore;
 namespace SEP6_TEST.Models
 {
     [Keyless]
-    [Table("ratings")]
-    public partial class Rating
+    [Table("likedMovies")]
+    public partial class LikedMovie
     {
+        [Column("user_id")]
+        public int UserId { get; set; }
         [Column("movie_id")]
         public int MovieId { get; set; }
-        [Column("rating")]
-        public double Rating1 { get; set; }
-        [Column("votes")]
-        public int Votes { get; set; }
+
+        [ForeignKey(nameof(MovieId))]
+        public virtual Movie Movie { get; set; }
+        [ForeignKey(nameof(UserId))]
+        public virtual User User { get; set; }
     }
 }

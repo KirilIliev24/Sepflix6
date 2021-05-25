@@ -17,8 +17,12 @@ namespace SEP6_TEST.Models
         {
         }
 
+        public virtual DbSet<LikedMovie> LikedMovies { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<MovieReview> MovieReviews { get; set; }
         public virtual DbSet<Rating> Ratings { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Watchlist> Watchlists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,33 +36,70 @@ namespace SEP6_TEST.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<Movie>(entity =>
+            modelBuilder.Entity<LikedMovie>(entity =>
             {
-                entity.ToTable("movies");
+                entity.HasOne(d => d.Movie)
+                    .WithMany()
+                    .HasForeignKey(d => d.MovieId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__likedMovi__movie__160F4887");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasColumnType("text")
-                    .HasColumnName("title");
-
-                entity.Property(e => e.Year).HasColumnName("year");
+                entity.HasOne(d => d.User)
+                    .WithMany()
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__likedMovi__user___151B244E");
             });
 
-            modelBuilder.Entity<Rating>(entity =>
+            modelBuilder.Entity<Movie>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
 
-                entity.ToTable("ratings");
+            modelBuilder.Entity<MovieReview>(entity =>
+            {
+                entity.HasKey(e => e.ReviewId)
+                    .HasName("PK__movieRev__60883D909AB3BCE8");
 
-                entity.Property(e => e.MovieId).HasColumnName("movie_id");
+                entity.Property(e => e.ReviewId).ValueGeneratedNever();
 
-                entity.Property(e => e.Rating1).HasColumnName("rating");
+                entity.Property(e => e.ReviewText).IsUnicode(false);
 
-                entity.Property(e => e.Votes).HasColumnName("votes");
+                entity.HasOne(d => d.Movie)
+                    .WithMany(p => p.MovieReviews)
+                    .HasForeignKey(d => d.MovieId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__movieRevi__movie__19DFD96B");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.MovieReviews)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__movieRevi__user___18EBB532");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.UserId).ValueGeneratedNever();
+
+                entity.Property(e => e.Password).IsUnicode(false);
+
+                entity.Property(e => e.Username).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Watchlist>(entity =>
+            {
+                entity.HasOne(d => d.Movie)
+                    .WithMany()
+                    .HasForeignKey(d => d.MovieId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__watchlist__movie__1332DBDC");
+
+                entity.HasOne(d => d.User)
+                    .WithMany()
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__watchlist__user___123EB7A3");
             });
 
             OnModelCreatingPartial(modelBuilder);

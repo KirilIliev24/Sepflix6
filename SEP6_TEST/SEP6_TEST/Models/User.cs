@@ -8,27 +8,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SEP6_TEST.Models
 {
-    [Table("movies")]
-    public partial class Movie
+    [Table("user")]
+    public partial class User
     {
-        public Movie()
+        public User()
         {
             MovieReviews = new HashSet<MovieReview>();
         }
 
         [Key]
-        [Column("id")]
-        public int Id { get; set; }
+        [Column("user_id")]
+        public int UserId { get; set; }
         [Required]
-        [Column("title", TypeName = "text")]
-        public string Title { get; set; }
-        [Column("year")]
-        public int Year { get; set; }
+        [StringLength(30)]
+        public string Username { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string Password { get; set; }
 
-        [InverseProperty(nameof(MovieReview.Movie))]
+        [InverseProperty(nameof(MovieReview.User))]
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
-
-        [NotMapped]
-        public Rating rating { get; set; }
     }
 }
