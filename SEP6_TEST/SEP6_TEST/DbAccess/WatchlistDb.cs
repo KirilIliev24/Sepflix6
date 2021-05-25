@@ -13,6 +13,22 @@ namespace SEP6_TEST.DbAccess
         public List<int> movieId { get; private set; } = new List<int>();
         private List<MovieDTO> movieDTOs { get; set; } = new List<MovieDTO>();
 
+        public void addMovieToWatchlist(string username, int movieId)
+        {
+            using (var context = new SqlServerSep6Context())
+            {
+                var watchlist = new Watchlist();
+                watchlist.Username = username;
+                watchlist.MovieId = movieId;
+                context.Watchlists.Add(watchlist);
+                context.SaveChanges();
+            }
+        }
+        public void removeMovieFromWatchList(string username, int movieId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<MovieDTO>> GetAllMoviesInWatchList(string username)
         {
             using (var context = new SqlServerSep6Context())
@@ -39,5 +55,7 @@ namespace SEP6_TEST.DbAccess
 
             }
         }
+
+        
     }
 }
