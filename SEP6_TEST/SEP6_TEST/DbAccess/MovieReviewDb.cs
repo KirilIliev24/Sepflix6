@@ -20,8 +20,7 @@ namespace SEP6_TEST.DbAccess
                 movieReview.Username = username;
                 movieReview.MovieId = movieId;
                 movieReview.ReviewText = reviewText;
-                movieReview.Rating = 0;
-                movieReview.Votes = 0;
+                
                 context.SaveChanges();
             }
         }

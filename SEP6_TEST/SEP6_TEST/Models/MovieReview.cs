@@ -23,10 +23,6 @@ namespace SEP6_TEST.Models
         [Column("reviewText")]
         [StringLength(255)]
         public string ReviewText { get; set; }
-        [Column("rating", TypeName = "decimal(10, 1)")]
-        public decimal? Rating { get; set; }
-        [Column("votes")]
-        public int? Votes { get; set; }
 
         [ForeignKey(nameof(MovieId))]
         [InverseProperty("MovieReviews")]
