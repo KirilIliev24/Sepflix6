@@ -79,6 +79,30 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
+        public async Task<MovieDTO> updateVotesAndRating(MovieDTO movieDTO)
+        {
+            MovieDTO movie=new MovieDTO();
+            using (var context = new SqlServerSep6Context())
+            {
+                try
+                {
+                    movie = await getMovieByID(movieDTO.Movie.Id);
+                    movie.Rating.Rating1 = movieDTO.Rating.Rating1;
+                    movie.Rating.Votes = movieDTO.Rating.Votes;
+                    context.SaveChanges();
+
+                    return movie;
+
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                    return movie;
+                }
+            }
+        }
+
         private async Task GetMovieRating()
         {
             using (var context = new SqlServerSep6Context())

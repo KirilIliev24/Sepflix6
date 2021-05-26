@@ -12,5 +12,7 @@ namespace SEP6_TEST.DbAccess
 
         public Task<MovieDTO> getMovieByID(int id);
 
+        public Task<MovieDTO> updateVotesAndRating(MovieDTO movieDTO);
+
     }
 }
