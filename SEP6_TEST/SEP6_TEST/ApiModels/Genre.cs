@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace SEP6_TEST.ApiModels
 {
-    public class Image
+    public class Genre
     {
-        public string url { get; set; } = "";
+        public int id { get; set; }
+        public string name { get; set; }
     }
 }

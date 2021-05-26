@@ -5,6 +5,7 @@
 @using SEP6_TEST.ApiModels
 @using SEP6_TEST.DbAccess
 @using SEP6_TEST.Components;
+@using SEP6_TEST.DTO;
 
 @inject IMovieAccessInfoApi movieApi
 @inject IMovieInfoDb moviesDb
@@ -31,17 +32,27 @@ else
 }
 
 @code {
-    private List<Movie> Movies = new List<Movie>();
-
-    private List<MovieBaseInfo> MoviesBaseInfo = new List<MovieBaseInfo>();
+    private List<MovieDTO> MovieDTOs = new List<MovieDTO>();
 
     private bool Loading = false;
 
     protected override async Task OnInitializedAsync()
     {
         Loading = true;
-        //await moviesDb.GetAllMovies();
-        Movies = moviesDb.Movies;
+        await moviesDb.GetAllMovies();
+        MovieDTOs = moviesDb.MovieDTOs;
+
+        foreach (var movieDto in MovieDTOs)
+        {
+            await movieApi.GetMoviePosterAsync(movieDto.Movie.Id);
+            movieDto.Poster = movieApi.movieBaseInfo.posters.First().file_path;
+        }
+
+        //await movieApi.GetMoviePosterAsync(15414);
+        //await movieApi.GetMovieCreditsAsync(15414);
+        //await movieApi.GetMoviePlotAsync(15414);
+
+        //poster = movieApi.posterLink;
 
         //should get the base info for every movie, add all async methods to a list and run them async
 
