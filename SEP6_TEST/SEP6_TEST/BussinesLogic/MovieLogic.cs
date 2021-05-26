@@ -18,7 +18,7 @@ namespace SEP6_TEST.BussinesLogic
             {
                 movie =await movieInfoDb.getMovieByID(movieDTO.Movie.Id);
                 movie.Rating.Votes += 1;
-                movie.Rating.Rating1 = (movie.Rating.Rating1 + rating) / movie.Rating.Votes;
+                movie.Rating.Rating1 = (movie.Rating.Rating1 + rating) / 2;
                 movie = await movieInfoDb.updateVotesAndRating(movie);
 
                 return movie;
