@@ -12,8 +12,7 @@ namespace SEP6_TEST.ApiAccess
     {
         private HttpClient client;
         public MovieBaseInfo movieBaseInfo { get; private set; } = new MovieBaseInfo();
-        //public Poster posterLink { get; private set; } = new Poster();
-
+        public PersonsBiography bio { get; private set; } = new PersonsBiography();
         public MovieInfoApi(IHttpClientFactory httpClientFactory)
         {
             client = httpClientFactory.CreateClient();
@@ -104,6 +103,31 @@ namespace SEP6_TEST.ApiAccess
                 var results = JsonConvert.DeserializeObject<MovieBaseInfo>(responce);
 
                 movieBaseInfo.results = results.results;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public async Task GetPersonsBioAsync(int personId)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Clear();
+                //maybe move these keys to the app settings
+                client.DefaultRequestHeaders.Add("api_key", "de4ac8654829c3ed659e8a98438c14f9");
+
+                var responce = await client.GetStringAsync($"https://api.themoviedb.org/3/person/{personId}?api_key=de4ac8654829c3ed659e8a98438c14f9&language=en-US");
+
+                var results = JsonConvert.DeserializeObject<PersonsBiography>(responce);
+
+                if(results.deathday is null)
+                {
+                    results.deathday = "";
+                }
+                bio = results;
 
             }
             catch (Exception e)

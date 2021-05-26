@@ -9,6 +9,6 @@ namespace SEP6_TEST.ApiModels
     {
         public string author { get; set; } = "";
         public string content { get; set; } = "";
-        public DateTime created_at { get; set; }
+        public string created_at { get; set; } = "";
     }
 }
