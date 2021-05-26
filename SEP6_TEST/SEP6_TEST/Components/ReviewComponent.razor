@@ -8,10 +8,10 @@
         <p class="card-text">@ReviewText</p>
         <div class="card-footer overflow-auto">
             <p>Votes: @Votes</p>
-            <a href="@Votes.Value++">
+            <a @onclick="AddVote">
                 <img style="width:50px;height:30px;overflow:auto;border-radius:90%" src="/Images/upvote.png" />
             </a>
-            <a href="@Votes.Value--">
+            <a @onclick="SubVote">
                 <img style="width:50px;height:30px;overflow:auto;border-radius:90%" src="/Images/downvotepng.png" />
             </a>
         </div>
@@ -26,5 +26,13 @@
     public decimal? Rating = 3;
     public int? Votes = 26;
 
+    void AddVote()
+    {
+        Votes++;
+    }
 
+    void SubVote()
+    {
+        Votes--;
+    }
 }
