@@ -37,11 +37,11 @@ namespace SEP6_TEST.DbAccess
                         double rating = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movie.Id).Select(p => p.Rating1).FirstOrDefault());
                         int noOfVotes = await Task.Run(() => context.Ratings.Where(p => p.MovieId == movie.Id).Select(p => p.Votes).FirstOrDefault());
 
-                        movie.rating = new Rating()
+                        /*movie.rating = new Rating()
                         {
                             Rating1 = rating,
                             Votes = noOfVotes
-                        };
+                        };*/
                     }
                 }
                 catch (Exception e)

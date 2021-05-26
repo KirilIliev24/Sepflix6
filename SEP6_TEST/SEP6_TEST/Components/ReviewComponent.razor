@@ -1,0 +1,30 @@
+﻿@using SEP6_TEST.Models;
+@page "/review"
+
+<div class="card text-white bg-info overflow-auto" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title pt-2">Review by @Username</h5>
+        <h6 class="card-subtitle mb-2 text-black-50">Rated @Rating/10</h6>
+        <p class="card-text">@ReviewText</p>
+        <div class="card-footer overflow-auto">
+            <p>Votes: @Votes</p>
+            <a href="@Votes.Value++">
+                <img style="width:50px;height:30px;overflow:auto;border-radius:90%" src="/Images/upvote.png" />
+            </a>
+            <a href="@Votes.Value--">
+                <img style="width:50px;height:30px;overflow:auto;border-radius:90%" src="/Images/downvotepng.png" />
+            </a>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    public string Username = "Bob";
+    public int MovieId = 12;
+    public string ReviewText = "Gucci movie, had adam sandler and stuff";
+    public decimal? Rating = 3;
+    public int? Votes = 26;
+
+
+}

@@ -1,4 +1,5 @@
 ﻿@page  "/movie"
+@using SEP6_TEST.Components;
 
 <h1 style="text-align:center">@MovieTitle</h1>
 <h6 style="text-align:center">Directed by @Director</h6>
@@ -13,7 +14,7 @@
     <h5 class="card-text text-center mb-2 mt-2">@Actors</h5>
 </div>
 
-<br/>
+<br />
 
 <div class="card bg-info text-white mb-3">
     <h5 class="card-header text-center">Description</h5>
@@ -55,14 +56,69 @@
         <button type="button" class="btn btn-warning">Add To Favotites</button>
         <button type="button" class="btn btn-info">Add To Watchlist</button>
     </div>
+</div>
+
+<br />
+
+<div class="card-columns ">
+    <div class="card bg-transparent">
+        <div class="card-body">
+            <ReviewComponent>
+
+            </ReviewComponent>
+        </div>
     </div>
+    <div class="card bg-transparent">
+        <div class="card-body">
+            <ReviewComponent>
+
+            </ReviewComponent>
+        </div>
+    </div>
+    <div class="card bg-transparent">
+        <div class="card-body">
+            <ReviewComponent>
+
+            </ReviewComponent>
+        </div>
+    </div>
+    <div class="card bg-transparent">
+        <div class="card-body w-100">
+            <ReviewComponent>
+
+            </ReviewComponent>
+        </div>
+    </div>
+    <div class="card bg-transparent">
+        <div class="card-body">
+            <ReviewComponent>
+
+            </ReviewComponent>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="card text-center bg-info overflow-auto w-100 mb-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Voice your opinion!</h5>
+
+        <div class="form-text">
+            <textarea class="form-control" id="FormControlTextarea" placeholder="Write your review" rows="3"></textarea>
+        </div>
+        <a href="#" class="btn btn-primary mt-2">Submit Review</a>
+
+    </div>
+</div>
 
 
-    @code {
-        string MovieTitle = "MovieTitle";
-        string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
-        string Actors = "Bob, roocs, aosndlaskn, ,asndlknkfa, ,as";
-        string Director = "Harambe";
-        string Rating = "5.6";
-        string Votes = "321";
-    }
+@code {
+    string MovieTitle = "MovieTitle";
+    string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
+    string Actors = "Bob, roocs, aosndlaskn, ,asndlknkfa, ,as";
+    string Director = "Harambe";
+    string Rating = "5.6";
+    string Votes = "321";
+
+}

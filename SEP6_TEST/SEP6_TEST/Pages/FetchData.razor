@@ -22,12 +22,12 @@ else
 
 
     @*@foreach (var movie in Movies)
-        {
+            {
 
-        }*@
+            }
 
-    <MovieHolderComponent movie=@movie>
-    </MovieHolderComponent>
+        <MovieHolderComponent movie=@movie>
+        </MovieHolderComponent>*@
 }
 
 @code {
@@ -48,5 +48,5 @@ else
         Loading = false;
     }
 
-    Movie movie = new Movie { Id = 1, rating = new Rating { MovieId = 1, Rating1 = 6.6, Votes = 245}, Title = "Fat & Furious 6", Year = 2025 };
+    //Movie movie = new Movie { Id = 1, rating = new Rating { MovieId = 1, Rating1 = 6.6, Votes = 245}, Title = "Fat & Furious 6", Year = 2025 };
 }

@@ -1,0 +1,14 @@
+﻿body {
+}
+
+div.upvote {
+    content: url("/wwwroot/Images/upvote.png");
+}
+
+div.downvote {
+    content: url("/wwwroot/Images/downvotepng.png");
+}
+
+​
+
+​
