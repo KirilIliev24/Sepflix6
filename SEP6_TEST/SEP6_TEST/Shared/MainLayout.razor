@@ -8,9 +8,7 @@
 </div>
 
 <div class="main">
-    <div class="top-row px-4" style="background-color: #3a0647">
-        <a href="https://localhost:44336/login" target="_blank">Log Out</a>
-    </div>
+
 
     <div class="content px-4">
         @Body
@@ -19,10 +17,10 @@
 
 
 @code
-{
+{   
     private bool hideNavMenu = true;
     private string NavMenuHide => hideNavMenu ? "hidden" : null;
-
+    
     protected override void OnInitialized()
     {
         if (string.IsNullOrWhiteSpace(user.user.Username))
