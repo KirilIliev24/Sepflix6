@@ -18,18 +18,18 @@
 
 @code
 {   
-    private bool hideNavMenu = true;
+    private bool hideNavMenu = false;
     private string NavMenuHide => hideNavMenu ? "hidden" : null;
-    
+
     protected override void OnInitialized()
     {
-        if (string.IsNullOrWhiteSpace(user.user.Username))
-        {
-            hideNavMenu = true;
-        }
-        else
-        {
-            hideNavMenu = false;
-        }
+        //if (string.IsNullOrWhiteSpace(user.user.Username))
+        //{
+        //    hideNavMenu = true;
+        //}
+        //else
+        //{
+        //    hideNavMenu = false;
+        //}
     }
 }
