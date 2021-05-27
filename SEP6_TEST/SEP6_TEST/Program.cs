@@ -22,6 +22,7 @@ namespace SEP6_TEST
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    //webBuilder.UseStaticWebAssets();
                     webBuilder.UseStartup<Startup>();
                 });
     }

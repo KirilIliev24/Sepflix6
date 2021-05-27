@@ -13,14 +13,21 @@ namespace SEP6_TEST.DbAccess
         {
             using (var context = new SqlServerSep6Context())
             {
-                bool exists = context.Users.Any(u => u.Username == user.Username);
-                if(exists == false)
+                try
                 {
-                    context.Users.Add(user);
-                    context.SaveChanges();
-                    return true;
+                    bool exists = context.Users.Any(u => u.Username == user.Username);
+                    if (exists == false)
+                    {
+                        context.Users.Add(user);
+                        context.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
+                catch (Exception)
                 {
                     return false;
                 }

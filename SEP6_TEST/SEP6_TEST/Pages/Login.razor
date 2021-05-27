@@ -4,6 +4,7 @@
 @inject NavigationManager NavigationManager
 
 
+<h1>Test text</h1>
 <form>
     <p>@error</p>
     <div class="form-group">
@@ -21,7 +22,7 @@
     </div>
     
 </form>
-<button class="btn btn-primary" @onclick=AttempLogin>Submit</button>
+<button class="btn btn-primary" @onclick=AttempLogin>Login</button>
 
 @code {
 
@@ -39,8 +40,8 @@
             if(isValid)
             {
                 error = "No error";
-                //navigate to all movies
-                //NavigationManager.NavigateTo("/movie", true);
+                //navigate to all movies (couter will be transformed to view all movies)
+                //NavigationManager.NavigateTo("/counter", true);
             }
             else
             {
@@ -53,3 +54,7 @@
         }
     }
 }
+
+<style>
+  
+</style>
