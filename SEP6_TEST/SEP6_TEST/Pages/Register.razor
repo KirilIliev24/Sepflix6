@@ -1,5 +1,11 @@
 ﻿
+@using DbAccess
+@using Models
+@inject IUserDb user
+@inject NavigationManager NavigationManager
+
 <form>
+    <p>@error</p>
     <div class="form-group">
         <label for="InputEmail">Email address</label>
         <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
@@ -13,9 +19,51 @@
         <label for="InputPassword">Repeat Password</label>
         <input type="password" class="form-control" id="InputPassword" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<button type="button" class="btn btn-primary">Submit</button>
+
 
 @code {
+    private string Email;
+    private string Password;
+    private string RepeatedPassword;
+    private bool isValid;
+    private string error;
 
+    private void AttempRegister()
+    {
+
+        if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password) && !string.IsNullOrWhiteSpace(RepeatedPassword))
+        {
+            if(Password.Equals(RepeatedPassword))
+            {
+                User newUser = new User()
+                {
+                    Username = Email,
+                    Password = Password
+                };
+
+                isValid = user.createUser(newUser);
+                if (isValid)
+                {
+                    error = "No error";
+                    //navigate to all movies
+                    //NavigationManager.NavigateTo("/movie", true);
+                }
+                else
+                {
+                    error = "Username is taken";
+                }
+            }
+            else
+            {
+                error = "Paswords do not match";
+            }
+
+        }
+        else
+        {
+            error = "There are one or more empty fields";
+        }
+    }
 }
