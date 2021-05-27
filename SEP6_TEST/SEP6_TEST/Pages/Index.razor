@@ -1,22 +1,53 @@
 ﻿@page "/"
-@using SEP6_TEST.Components;
 
 <h1>Hello, welcome to SepFlix!</h1>
 
-<br/>
+<br />
+<!--
+    <form class="form-inline bg-info text-center p-2">
+        <div class="form-group mb-2">
+            <p class="position-relative bg-danger flex-fill mt-3">Search</p>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label class="sr-only">Movie tite</label>
+            <input type="text" class="form-control" placeholder="Enter movie tite">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </form>
+    -->
+<button type="button" @onclick="toggleLogin" class="btn btn-info border-info">Login</button>
+<button type="button" @onclick="toggleRegister" class="btn btn-info border-info">Register</button>
 
-<form class="form-inline bg-info text-center p-2">
-    <div class="form-group mb-2">
-        <p class="position-relative bg-danger flex-fill mt-3">Search</p>
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label class="sr-only">Movie tite</label>
-        <input type="text" class="form-control" placeholder="Enter movie tite">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">Search</button>
-</form>
+
+<div hidden="@login">
+    <Login>
+
+    </Login>
+</div>
+
+<div hidden="@register">
+    <Register>
+
+    </Register>
+</div>
 
 
-    @code {
+
+@code {
+
+    bool login { get; set; } = true;
+    bool register { get; set; } = true;
+
+    void toggleLogin()
+    {
+        login = true;
+        register = false;
+    }
+
+    void toggleRegister()
+    {
+        login = false;
+        register = true;
+    }
 
     }

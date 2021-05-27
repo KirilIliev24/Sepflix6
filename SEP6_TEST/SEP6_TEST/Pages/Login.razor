@@ -1,4 +1,5 @@
 ﻿@page "/login" 
+@inject NavigationManager NM
 
 <form>
     <div class="form-group">
@@ -10,13 +11,14 @@
         <label for="InputPassword">Password</label>
         <input type="password" class="form-control" id="InputPassword" placeholder="Password">
     </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="Check">
-        <label class="form-check-label" for="Check">Remember login info</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button @onclick="login" type="button" class="btn btn-primary">Submit</button>
 </form>
 
 @code {
 
-}
+    void login()
+    {
+        NM.NavigateTo("movie", true);
+    }
+
+    }
