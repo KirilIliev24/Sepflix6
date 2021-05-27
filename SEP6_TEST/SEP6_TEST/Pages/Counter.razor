@@ -1,16 +1,61 @@
 ﻿@page "/counter"
+@using SEP6_TEST.Components;
+@using SEP6_TEST.DTO;
 
-<h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
+<h1 style="margin:auto;text-align:center;margin-bottom:10px">Movie list</h1>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<form class="form-inline bg-info text-center rounded mt-5 mb-5 pl-2 mx-auto w-100">
+        <div class="form-group">
+            <p class="m-auto w-100 align-content-center">Search for any movie</p>
+        </div>
+        <div class="form-group mt-2 mb-2 ml-2 mr-2">
+            <label class="sr-only">Movie tite</label>
+            <input type="text" class="form-control" placeholder="Enter movie title">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+<div style="justify-content:center">
+    <div class="card-columns float-none mx-auto w-100">
+        <!--
+
+        foreach (var movie in MovieDTOs)
+        {
+            <MovieHolderComponent movie="movie">
+
+            </MovieHolderComponent>
+        }-->
+        <MovieHolderComponent>
+
+        </MovieHolderComponent>
+
+        <MovieHolderComponent>
+
+        </MovieHolderComponent>
+
+        <MovieHolderComponent>
+
+        </MovieHolderComponent>
+
+        <MovieHolderComponent>
+
+        </MovieHolderComponent>
+
+        <MovieHolderComponent>
+
+        </MovieHolderComponent>
+
+        <MovieHolderComponent>
+
+        </MovieHolderComponent>
+
+
+    </div>
+</div>
 
 @code {
-    private int currentCount = 0;
+    private List<MovieDTO> MovieDTOs = new List<MovieDTO>();
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+
 }
