@@ -8,6 +8,7 @@ namespace SEP6_TEST.DbAccess
 {
     public class UserDb : IUserDb
     {
+        public User user { get; private set; } = new User();
         public void createUser(User user)
         {
             using (var context = new SqlServerSep6Context())
@@ -17,13 +18,26 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
+        //maybe this should return bool
+        //true if there is such user, false if there is not
         public User getUserByName(string username)
         {
             using (var context = new SqlServerSep6Context())
             {
                 var user = context.Users.Find(username);
-                return user;
+                if(user != null)
+                {
+                    this.user = user;
+                    return user;
+                }
+                else
+                {
+                    return new User();
+                }
             }
         }
+
+        //add a logout user
+        //clean all data
     }
 }

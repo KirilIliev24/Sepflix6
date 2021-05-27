@@ -32,6 +32,7 @@ namespace SEP6_TEST.DbAccess
             {
                 try
                 {
+                    //could have gotten full objects of review, not just ids
                     reviewIDs = await Task.Run(() => context.MovieReviews.Where(i=>i.MovieId.Equals(movieId)).Select(r=>r.ReviewId).ToList());
 
                     foreach (var id in reviewIDs)
