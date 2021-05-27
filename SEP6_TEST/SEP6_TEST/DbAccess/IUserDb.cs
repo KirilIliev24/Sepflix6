@@ -9,7 +9,8 @@ namespace SEP6_TEST.DbAccess
     interface IUserDb
     {
         public User user { get; }
-        public void createUser(User user);
-        public User getUserByName(string username);
+        public bool createUser(User user);
+        public bool getUserByName(string username);
+        public void logoutUser();
     }
 }

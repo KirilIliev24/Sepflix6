@@ -9,35 +9,55 @@ namespace SEP6_TEST.DbAccess
     public class UserDb : IUserDb
     {
         public User user { get; private set; } = new User();
-        public void createUser(User user)
+        public bool createUser(User user)
         {
             using (var context = new SqlServerSep6Context())
             {
-                context.Users.Add(user);
-                context.SaveChanges();
+                bool exists = context.Users.Any(u => u.Username == user.Username);
+                if(exists == false)
+                {
+                    context.Users.Add(user);
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
         //maybe this should return bool
         //true if there is such user, false if there is not
-        public User getUserByName(string username)
+        public bool getUserByName(string username)
         {
+            //add a password check
             using (var context = new SqlServerSep6Context())
             {
-                var user = context.Users.Find(username);
-                if(user != null)
+                try
                 {
-                    this.user = user;
-                    return user;
+                    var user = context.Users.Find(username);
+                    if (user != null)
+                    {
+                        this.user = user;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    return new User();
+                    return false;
                 }
             }
         }
 
-        //add a logout user
-        //clean all data
+        public void logoutUser()
+        {
+            user = new User();
+        }
+
     }
 }

@@ -1,6 +1,9 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
+@using DbAccess
+@inject IUserDb user
+
+<div class="sidebar" hidden="@NavMenuHide">
     <NavMenu />
 </div>
 
@@ -13,3 +16,22 @@
         @Body
     </div>
 </div>
+
+
+@code
+{
+    private bool hideNavMenu = true;
+    private string NavMenuHide => hideNavMenu ? "hidden" : null;
+
+    protected override void OnInitialized()
+    {
+        if (string.IsNullOrWhiteSpace(user.user.Username))
+        {
+            hideNavMenu = true;
+        }
+        else
+        {
+            hideNavMenu = false;
+        }
+    }
+}
