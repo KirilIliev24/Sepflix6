@@ -9,7 +9,6 @@ namespace SEP6_TEST.DbAccess
 {
     public class MovieInfoDb : IMovieInfoDb
     {
-        
         public List<MovieDTO> MovieDTOs { get; private set; } = new List<MovieDTO>();
 
         public async Task GetAllMovies()
@@ -110,6 +109,27 @@ namespace SEP6_TEST.DbAccess
                 }
             }
         }
+
+        public async Task<List<MovieDTO>> GetSearchResults(string searchPhrase)
+        {
+            List<MovieDTO> result = new List<MovieDTO>();
+            if(!string.IsNullOrWhiteSpace(searchPhrase))
+            {
+                await Task.Run(() =>
+                {
+                    foreach (var m in MovieDTOs)
+                    {
+                        if (m.Movie.Title.Contains(searchPhrase))
+                        {
+                            result.Add(m);
+                        }
+                    }
+                });
+                return result;
+            }
+            return MovieDTOs;
+        }
+
         public async Task<string> getMoviePoster(int movieId)
         {
             using (var context = new SqlServerSep6Context())
