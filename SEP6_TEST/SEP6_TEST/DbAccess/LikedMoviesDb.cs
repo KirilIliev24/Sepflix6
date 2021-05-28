@@ -71,5 +71,11 @@ namespace SEP6_TEST.DbAccess
                 }
             }
         }
+
+        public bool IsMovieInLikedlist(int id)
+        {
+            var exists = LinkedMovieDTOs.Any(i => i.Movie.Id == id);
+            return exists;
+        }
     }
 }

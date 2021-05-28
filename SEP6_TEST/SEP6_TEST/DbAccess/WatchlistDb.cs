@@ -11,7 +11,7 @@ namespace SEP6_TEST.DbAccess
         MovieInfoDb MovieInfoDb = new MovieInfoDb();
         
         public List<int> movieId { get; private set; } = new List<int>();
-        private List<MovieDTO> movieDTOs { get; set; } = new List<MovieDTO>();
+        private List<MovieDTO> WatchlistDTOs { get; set; } = new List<MovieDTO>();
 
         public void addMovieToWatchlist(string username, int movieId)
         {
@@ -57,22 +57,27 @@ namespace SEP6_TEST.DbAccess
 
                     foreach (var movie in movieId)
                     {
-                        movieDTOs.Add(await MovieInfoDb.getMovieByID(movie));
+                        WatchlistDTOs.Add(await MovieInfoDb.getMovieByID(movie));
 
 
                     }
-                    return movieDTOs;
+                    return WatchlistDTOs;
                 }
                 catch (Exception e)
                 {
 
                     Console.WriteLine(e.Message);
-                    return movieDTOs;
+                    return WatchlistDTOs;
                 }
 
             }
         }
 
+        public bool IsMovieInWatchlist(int id)
+        {
+            var exists = WatchlistDTOs.Any(i => i.Movie.Id == id);
+            return exists;
+        }
         
     }
 }

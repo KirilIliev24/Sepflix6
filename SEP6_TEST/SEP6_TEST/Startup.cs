@@ -34,6 +34,7 @@ namespace SEP6_TEST
             services.AddScoped<IMovieInfoDb, MovieInfoDb>();
             services.AddScoped<IUserDb, UserDb>();
             services.AddScoped<ILikedMoviesDb, LikedMoviesDb>();
+            services.AddScoped<IWatchListDb, WatchlistDb>();
             services.AddHttpClient();
         }
 

@@ -90,9 +90,8 @@
         }
     }
 
-    public async void GetMovieDetails(int movieId)
+    public void GetMovieDetails(int movieId)
     {
-        Error = movieId.ToString();
-        NavigationManager.NavigateTo($"/movie/{movieId}");
+        NavigationManager.NavigateTo($"/movie/{movieId}", true);
     }
 }

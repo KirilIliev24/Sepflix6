@@ -4,6 +4,7 @@
 @using SEP6_TEST.ApiModels
 @using SEP6_TEST.DbAccess
 @using SEP6_TEST.DTO
+@using SEP6_TEST.Enums
 @inject IMovieAccessInfoApi movieFromApi
 @inject IMovieInfoDb movieFromDb
 
@@ -37,7 +38,11 @@
         <div class="card-footer">
             <p class="card-text text-center">Your Rating</p>
             <div class="btn-group float-none" role="group" aria-label="First group">
-                <button type="button" class="btn btn-secondary border-info">1</button>
+                @for (int i = 1; i <= 10; i++)
+                {
+                    <button type="button" class="btn btn-secondary border-info" value="@i">@i</button>
+                }
+                @*<button type="button" class="btn btn-secondary border-info">1</button>
                 <button type="button" class="btn btn-secondary border-info">2</button>
                 <button type="button" class="btn btn-secondary border-info">3</button>
                 <button type="button" class="btn btn-secondary border-info">4</button>
@@ -46,7 +51,7 @@
                 <button type="button" class="btn btn-secondary border-info">7</button>
                 <button type="button" class="btn btn-secondary border-info">8</button>
                 <button type="button" class="btn btn-secondary border-info">9</button>
-                <button type="button" class="btn btn-secondary border-info">10</button>
+                <button type="button" class="btn btn-secondary border-info">10</button>*@
             </div>
         </div>
 
@@ -122,7 +127,12 @@
 @code {
     [Parameter] public int movieId { get; set; }
     private MovieDTO movie { get; set; }
-    public MovieBaseInfo movieBaseInfo { get; private set; } = new MovieBaseInfo();
+    private MovieBaseInfo movieBaseInfo { get; set; } = new MovieBaseInfo();
+    private CrewMember director;
+
+    private bool isLoading = false;
+    private bool movieInWatchlist = false;
+    private bool movieInLikedList = false;
 
     string MovieTitle = "MovieTitle";
     string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
@@ -133,8 +143,17 @@
 
     protected async override Task OnInitializedAsync()
     {
+        isLoading = true;
         movie = await movieFromDb.getMovieByID(movieId);
         await movieFromApi.GetAllMovieInfo(movieId);
         movieBaseInfo = movieFromApi.movieBaseInfo;
+
+        director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
+
+
+
+        isLoading = false;
     }
+
+    //add methods for whatchlist and favorite and set the buttons to active only if the movies are not added
 }
