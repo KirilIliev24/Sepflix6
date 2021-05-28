@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEP6_TEST.BussinesLogic
 {
-    interface IMovieLogic
+    public interface IMovieLogic
     {
         public Task<MovieDTO> updateVotesAndRating(MovieDTO movieDTO,int rating);
 

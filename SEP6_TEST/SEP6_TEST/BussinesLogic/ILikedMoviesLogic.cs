@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SEP6_TEST.BussinesLogic
 {
-    interface ILikedMoviesLogic
+    public interface ILikedMoviesLogic
     {
         public bool addMoviesToLiked(string username, int movieId);
     }

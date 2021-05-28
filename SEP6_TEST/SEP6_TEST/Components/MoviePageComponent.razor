@@ -6,152 +6,141 @@
 @using SEP6_TEST.DTO
 @using SEP6_TEST.BussinesLogic
 @using SEP6_TEST.Enums
+@using SEP6_TEST.Models
 @inject IMovieAccessInfoApi movieFromApi
 @inject IMovieInfoDb movieFromDb
 @inject IWatchListDb watchList
 @inject ILikedMoviesDb likedList
 @inject IUserDb currentUser
 @inject IMovieLogic movieLogic
-
-<h1 style="text-align:center">@MovieTitle</h1>
-<h6 style="text-align:center">Directed by @Director</h6>
-
-<br />
-<img style="margin-left:auto;margin-right:auto;display: block;" src="/Images/diesel.png" alt="MovieImage" />
-<br />
+@inject IMovieReviewDb movieReview
 
 
-<div class="card bg-info text-white">
-    <h5 class="card-header text-center ">Actors</h5>
-    <h5 class="card-text text-center mb-2 mt-2">@Actors</h5>
-</div>
+@if (isLoading == false)
+{
+    <h1 style="text-align:center">@MovieTitle</h1>
+    <h6 style="text-align:center">Directed by @Director</h6>
 
-<br />
+    <br />
+    <img style="margin-left:auto;margin-right:auto;display: block;" src="/Images/diesel.png" alt="MovieImage" />
+    <br />
 
-<div class="card bg-info text-white mb-3">
-    <h5 class="card-header text-center">Description</h5>
-    <h5 class="card-text text-center mb-2 mt-2">@MovieDesc</h5>
-</div>
 
-<br />
+    <div class="card bg-info text-white">
+        <h5 class="card-header text-center ">Actors</h5>
+        <h5 class="card-text text-center mb-2 mt-2">@Actors</h5>
+    </div>
 
-<div class="card bg-info text-white align-items-center">
-    <h5 class="card-header text-center">Rated @Rating by viewers</h5>
-    <div class="card-body">
-        <h5 class="card-title text-center">@Votes ratings in total</h5>
+    <br />
 
-        <div class="card-footer">
-            <p class="card-text text-center">Your Rating</p>
-            <div class="btn-group float-none" role="group" aria-label="First group">
-                @for (int i = 1; i <= 10; i++)
-                {
-                    <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(i))">@i</button>
-                }
-                @*<button type="button" class="btn btn-secondary border-info">1</button>
-                <button type="button" class="btn btn-secondary border-info">2</button>
-                <button type="button" class="btn btn-secondary border-info">3</button>
-                <button type="button" class="btn btn-secondary border-info">4</button>
-                <button type="button" class="btn btn-secondary border-info">5</button>
-                <button type="button" class="btn btn-secondary border-info">6</button>
-                <button type="button" class="btn btn-secondary border-info">7</button>
-                <button type="button" class="btn btn-secondary border-info">8</button>
-                <button type="button" class="btn btn-secondary border-info">9</button>
-                <button type="button" class="btn btn-secondary border-info">10</button>*@
+    <div class="card bg-info text-white mb-3">
+        <h5 class="card-header text-center">Description</h5>
+        <h5 class="card-text text-center mb-2 mt-2">@MovieDesc</h5>
+    </div>
+
+    <br />
+
+    <div class="card bg-info text-white align-items-center">
+        <h5 class="card-header text-center">Rated @Rating by viewers</h5>
+        <div class="card-body">
+            <h5 class="card-title text-center">@Votes ratings in total</h5>
+
+            <div class="card-footer">
+                <p class="card-text text-center">Your Rating</p>
+                <div class="btn-group float-none" role="group" aria-label="First group">
+                    @for (int i = 1; i <= 10; i++)
+                    {
+                        <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(i))">@i</button>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <br />
+
+    <div style="text-align:center;margin-bottom:10px">
+        <div class="btn-group-lg float-none" role="group" aria-label="Second group">
+            @if (movieInLikedList == false)
+            {
+                <button type="button" class="btn btn-warning" @onclick="AddToLiked">Add To Liked</button>
+            }
+            else
+            {
+                <button type="button" class="btn btn-warning" @onclick="RemoveFromLiked">Remove from Liked</button>
+            }
+            @if (movieInWatchlist == false)
+            {
+                <button type="button" class="btn btn-info" @onclick="AddToWatchList">Add To Watchlist</button>
+            }
+            else
+            {
+                <button type="button" class="btn btn-info" @onclick="RemoveFromWatchList">Remove from Watchlist</button>
+            }
+        </div>
+    </div>
+
+    <br />
+
+    <div class="card-columns ">
+        @foreach (var r in reviews)
+        {
+            <div class="card bg-transparent">
+                <div class="card-body">
+                    <ReviewComponent Review="r">
+
+                    </ReviewComponent>
+                </div>
+            </div>
+        }
+
+        <div class="card bg-transparent">
+            <div class="card-body">
+                <ReviewComponent>
+
+                </ReviewComponent>
             </div>
         </div>
-
     </div>
-</div>
 
+    <br />
 
-
-<br />
-
-<div style="text-align:center;margin-bottom:10px">
-    <div class="btn-group-lg float-none" role="group" aria-label="Second group">
-        @if (movieInLikedList == false)
-        {
-            <button type="button" class="btn btn-warning" @onclick="AddToLiked">Add To Liked</button>
-        }
-        else
-        {
-            <button type="button" class="btn btn-warning" @onclick="RemoveFromLiked">Remove from Liked</button>
-        }
-        @if (movieInWatchlist == false)
-        {
-            <button type="button" class="btn btn-info" @onclick="AddToWatchList">Add To Watchlist</button>
-        }
-        else
-        {
-            <button type="button" class="btn btn-info" @onclick="RemoveFromWatchList">Remove from Watchlist</button>
-        }
-    </div>
-</div>
-
-<br />
-
-<div class="card-columns ">
-    <div class="card bg-transparent">
+    <div class="card text-center bg-info overflow-auto w-100 mb-3" style="width: 18rem;">
         <div class="card-body">
-            <ReviewComponent>
+            <h5 class="card-title">Voice your opinion!</h5>
 
-            </ReviewComponent>
+            <div class="form-text">
+                <textarea class="form-control" id="FormControlTextarea" placeholder="Write your review" rows="3" @bind="reviewText"></textarea>
+            </div>
+            <a class="btn btn-primary mt-2" @onclick="SubmitReview">Submit Review</a>
+
         </div>
     </div>
-    <div class="card bg-transparent">
-        <div class="card-body">
-            <ReviewComponent>
+}
+else
+{
+    <span>Loading...</span>
+}
 
-            </ReviewComponent>
-        </div>
-    </div>
-    <div class="card bg-transparent">
-        <div class="card-body">
-            <ReviewComponent>
-
-            </ReviewComponent>
-        </div>
-    </div>
-    <div class="card bg-transparent">
-        <div class="card-body w-100">
-            <ReviewComponent>
-
-            </ReviewComponent>
-        </div>
-    </div>
-    <div class="card bg-transparent">
-        <div class="card-body">
-            <ReviewComponent>
-
-            </ReviewComponent>
-        </div>
-    </div>
-</div>
-
-<br />
-
-<div class="card text-center bg-info overflow-auto w-100 mb-3" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">Voice your opinion!</h5>
-
-        <div class="form-text">
-            <textarea class="form-control" id="FormControlTextarea" placeholder="Write your review" rows="3"></textarea>
-        </div>
-        <a href="#" class="btn btn-primary mt-2">Submit Review</a>
-
-    </div>
-</div>
 
 
 @code {
     [Parameter] public int movieId { get; set; }
-    private MovieDTO movie { get; set; }
+    public MovieDTO movie { get; set; }
+    public List<MovieReview> reviews { get; set; } = new List<MovieReview>();
     private MovieBaseInfo movieBaseInfo { get; set; } = new MovieBaseInfo();
     private CrewMember director;
 
     private bool isLoading = false;
     private bool movieInWatchlist = false;
     private bool movieInLikedList = false;
+
+    private string reviewText = "";
+
+    private string Test = "";
 
     string MovieTitle = "MovieTitle";
     string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
@@ -160,13 +149,24 @@
     string Rating = "5.6";
     string Votes = "321";
 
+
+    //protected override async Task OnAfterRenderAsync()
+    //{
+
+    //}
+
+    //protected override bool ShouldRender()
+    //{
+    //    return true;
+    //}
+
     protected async override Task OnInitializedAsync()
     {
         isLoading = true;
         movie = await movieFromDb.getMovieByID(movieId);
         await movieFromApi.GetAllMovieInfo(movieId);
         movieBaseInfo = movieFromApi.movieBaseInfo;
-
+        reviews = await movieReview.getAllReviewsForMovie(movieId);
         director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
 
         movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
@@ -175,29 +175,38 @@
         isLoading = false;
     }
 
-    //add methods for whatchlist and favorite and set the buttons to active only if the movies are not added
     private void AddToLiked()
     {
         likedList.addMovieToLiked(currentUser.user.Username, movieId);
+        //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
     }
 
     private void AddToWatchList()
     {
         watchList.addMovieToWatchlist(currentUser.user.Username, movieId);
+        //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
     }
 
     private void RemoveFromLiked()
     {
         likedList.deleteALikedMovie(currentUser.user.Username, movieId);
+        //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
     }
 
     private void RemoveFromWatchList()
     {
         watchList.removeMovieFromWatchList(currentUser.user.Username, movieId);
+        //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
     }
 
     private void RateMovie(int rate)
     {
         movieLogic.updateVotesAndRating(movie, rate);
+    }
+
+    private void SubmitReview()
+    {
+        movieReview.addReview(currentUser.user.Username, movieId, reviewText);
+        reviewText = "";
     }
 }

@@ -10,14 +10,18 @@ namespace SEP6_TEST.BussinesLogic
 {
     public class MovieLogic : IMovieLogic
     {
-        private MovieInfoDb movieInfoDb = new MovieInfoDb();
-        MovieDTO movie = new MovieDTO();
+        private IMovieInfoDb MovieInfoDb;
+
+        public MovieLogic(IMovieInfoDb movieInfoDb)
+        {
+            MovieInfoDb = movieInfoDb;
+        }
         public async Task<MovieDTO> getMovieByID(int movieId)
         {
-           
+            MovieDTO movie = new MovieDTO();
             try
             {
-                movie = await movieInfoDb.getMovieByID(movieId);
+                movie = await MovieInfoDb.getMovieByID(movieId);
                 return movie;
             }
             catch (Exception e)
@@ -30,13 +34,14 @@ namespace SEP6_TEST.BussinesLogic
 
         public async Task<MovieDTO> updateVotesAndRating(MovieDTO movieDTO, int rating)
         {
-            
+
+            MovieDTO movie = new MovieDTO();
             try
             {
-                movie =await movieInfoDb.getMovieByID(movieDTO.Movie.Id);
+                movie =await MovieInfoDb.getMovieByID(movieDTO.Movie.Id);
                 movie.Rating.Votes += 1;
                 movie.Rating.Rating1 = (movie.Rating.Rating1 + rating) / 2;
-                movie = await movieInfoDb.updateVotesAndRating(movie);
+                movie = await MovieInfoDb.updateVotesAndRating(movie);
 
                 return movie;
 

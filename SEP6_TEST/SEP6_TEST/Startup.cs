@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using SEP6_TEST.ApiAccess;
 using SEP6_TEST.Data;
 using SEP6_TEST.DbAccess;
+using SEP6_TEST.BussinesLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,8 @@ namespace SEP6_TEST
             services.AddScoped<IUserDb, UserDb>();
             services.AddScoped<ILikedMoviesDb, LikedMoviesDb>();
             services.AddScoped<IWatchListDb, WatchlistDb>();
+            services.AddScoped<IMovieLogic, MovieLogic>();
+            services.AddScoped<IMovieReviewDb, MovieReviewDb>();
             services.AddHttpClient();
         }
 

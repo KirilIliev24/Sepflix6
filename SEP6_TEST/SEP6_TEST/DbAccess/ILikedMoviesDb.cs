@@ -7,7 +7,7 @@ using SEP6_TEST.Models;
 
 namespace SEP6_TEST.DbAccess
 {
-    interface ILikedMoviesDb
+    public interface ILikedMoviesDb
     {
         public void addMovieToLiked(string username, int movieId);
         public void deleteALikedMovie(string username, int movieId);

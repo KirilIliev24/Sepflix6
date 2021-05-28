@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SEP6_TEST.DbAccess;
+
 namespace SEP6_TEST.BussinesLogic
 {
     public class LikedMovieLogic : ILikedMoviesLogic
     {
 
-        LikedMoviesDb LikedMoviesDb = new LikedMoviesDb();
+        private ILikedMoviesDb LikedMoviesDb;
+
+        public LikedMovieLogic(ILikedMoviesDb likedMoviesDb)
+        {
+            LikedMoviesDb = likedMoviesDb;
+        }
+
         public bool addMoviesToLiked(string username, int movieId)
         {
             LikedMoviesDb.addMovieToLiked(username, movieId);
@@ -23,8 +30,6 @@ namespace SEP6_TEST.BussinesLogic
             {
                 return exists;
             }
-
-
         }
     }
 }
