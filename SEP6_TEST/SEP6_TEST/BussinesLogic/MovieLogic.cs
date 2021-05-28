@@ -11,9 +11,26 @@ namespace SEP6_TEST.BussinesLogic
     public class MovieLogic : IMovieLogic
     {
         private MovieInfoDb movieInfoDb = new MovieInfoDb();
+        MovieDTO movie = new MovieDTO();
+        public async Task<MovieDTO> getMovieByID(int movieId)
+        {
+           
+            try
+            {
+                movie = await movieInfoDb.getMovieByID(movieId);
+                return movie;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return movie;
+                
+            }
+        }
+
         public async Task<MovieDTO> updateVotesAndRating(MovieDTO movieDTO, int rating)
         {
-            MovieDTO movie = new MovieDTO();
+            
             try
             {
                 movie =await movieInfoDb.getMovieByID(movieDTO.Movie.Id);

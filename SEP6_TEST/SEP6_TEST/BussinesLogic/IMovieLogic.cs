@@ -9,5 +9,9 @@ namespace SEP6_TEST.BussinesLogic
     interface IMovieLogic
     {
         public Task<MovieDTO> updateVotesAndRating(MovieDTO movieDTO,int rating);
+
+        public Task<MovieDTO> getMovieByID(int movieId);
+
+
     }
 }
