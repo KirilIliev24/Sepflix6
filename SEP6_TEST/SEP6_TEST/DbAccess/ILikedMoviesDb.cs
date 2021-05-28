@@ -16,5 +16,7 @@ namespace SEP6_TEST.DbAccess
 
         public bool islikedMovieInLikedDB(int movieId);
         public void addLikedMovieToList(int movieId);
+
+        public void deleteLikedMovieFromList(int movieId);
     }
 }
