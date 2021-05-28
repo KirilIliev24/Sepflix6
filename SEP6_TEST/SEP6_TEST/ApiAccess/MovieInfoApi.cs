@@ -19,6 +19,19 @@ namespace SEP6_TEST.ApiAccess
         }
 
         //maybe add a clear method and a call all method
+        public async Task GetAllMovieInfo(int movieId)
+        {
+            try
+            {
+                await GetMoviePlotAsync(movieId);
+                await GetMovieCreditsAsync(movieId);
+                await GetMovieReviewsAsync(movieId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
         public async Task GetMoviePlotAsync(int movieId)
         {
@@ -111,6 +124,7 @@ namespace SEP6_TEST.ApiAccess
             }
         }
 
+        //need to move to a sepparate class
         public async Task GetPersonsBioAsync(int personId)
         {
             try

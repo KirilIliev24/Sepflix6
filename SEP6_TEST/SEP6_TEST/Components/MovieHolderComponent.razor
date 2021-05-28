@@ -1,6 +1,8 @@
-﻿@page "/moviecontainer"
+﻿
 @using SEP6_TEST.Models;
 @using SEP6_TEST.DTO;
+
+@inject NavigationManager navigationManager
 
 
 <div class="card text-white bg-transparent border-info shadow w-auto" style="width: 18rem;">
@@ -21,5 +23,4 @@
     string rating = "5.6";
     string votes = "321";
     //[Parameter] public MovieDTO movie { get; set; }
-
 }

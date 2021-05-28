@@ -33,6 +33,7 @@ namespace SEP6_TEST
             services.AddScoped<IMovieAccessInfoApi, MovieInfoApi>(); //- scope is like Singleton, but for a specific client
             services.AddScoped<IMovieInfoDb, MovieInfoDb>();
             services.AddScoped<IUserDb, UserDb>();
+            services.AddScoped<ILikedMoviesDb, LikedMoviesDb>();
             services.AddHttpClient();
         }
 

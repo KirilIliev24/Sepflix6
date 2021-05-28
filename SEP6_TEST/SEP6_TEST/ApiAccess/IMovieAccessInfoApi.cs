@@ -10,7 +10,7 @@ namespace SEP6_TEST.ApiAccess
     {
         public MovieBaseInfo movieBaseInfo { get; }
         public PersonsBiography bio { get; }
-        //public Poster posterLink { get; }
+        public Task GetAllMovieInfo(int movieId);
         public Task GetMoviePlotAsync(int movieId);
         public Task GetMoviePosterAsync(int movieId);
         public Task GetMovieCreditsAsync(int movieId);

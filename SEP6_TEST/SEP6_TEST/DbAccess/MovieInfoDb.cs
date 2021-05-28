@@ -11,30 +11,40 @@ namespace SEP6_TEST.DbAccess
     {
         public List<MovieDTO> MovieDTOs { get; private set; } = new List<MovieDTO>();
 
-        public async Task GetAllMovies()
+        public async Task<List<MovieDTO>> GetAllMovies()
         {
             using (var context = new SqlServerSep6Context())
             {
                 try
                 {
-                    List<Movie> Movies = await Task.Run(() => context.Movies.Select(p => p).ToList());
-                   
-                    foreach (var movie in Movies)
+                    if(MovieDTOs.Count == 0)
                     {
-                        MovieDTO movieDTO = new MovieDTO()
+                        List<Movie> Movies = await Task.Run(() => context.Movies.Select(p => p).ToList());
+
+                        foreach (var movie in Movies)
                         {
-                            Movie = movie
-                        };
-                      
-                        MovieDTOs.Add(movieDTO);
-                        
+                            MovieDTO movieDTO = new MovieDTO()
+                            {
+                                Movie = movie
+                            };
+
+                            MovieDTOs.Add(movieDTO);
+
+                        }
+                        await GetMovieRating();
+                        await GetAllMoviePosters();
+                        return MovieDTOs;
                     }
-                    await GetMovieRating();
-                    await GetAllMoviePosters();
+                    else
+                    {
+                        return MovieDTOs;
+                    }
+                   
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    return MovieDTOs;
                 }
             }
         }
@@ -42,19 +52,25 @@ namespace SEP6_TEST.DbAccess
         public async Task<MovieDTO> getMovieByID(int id)
         {
             var movieDTO = new MovieDTO();
+           
             using (var context = new SqlServerSep6Context())
             {
-
                 try
                 {
+                    var exists = MovieDTOs.Any(i => i.Movie.Id == id);
+                    if(exists == true)
+                    {
+                        var movieInCache = MovieDTOs.FirstOrDefault(i => i.Movie.Id == id);
+                        return movieInCache;
+                    }
+                   
                     movieDTO.Movie = context.Movies.Find(id);
-                    movieDTO.Rating =await getRating(id);
+                    movieDTO.Rating = await getRating(id);
                     movieDTO.Poster = await getMoviePoster(id);
                     return movieDTO;
                 }
                 catch (Exception e)
                 {
-
                     Console.WriteLine(e.Message);
                     return movieDTO;
                 }
@@ -127,7 +143,7 @@ namespace SEP6_TEST.DbAccess
                 });
                 return result;
             }
-            return MovieDTOs;
+            return result;
         }
 
         public async Task<string> getMoviePoster(int movieId)

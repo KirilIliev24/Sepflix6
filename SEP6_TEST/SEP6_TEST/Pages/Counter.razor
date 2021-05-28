@@ -1,35 +1,43 @@
 ﻿@page "/counter"
 @using SEP6_TEST.Components;
 @using SEP6_TEST.DTO;
+@using SEP6_TEST.DbAccess;
+@using SEP6_TEST.ApiAccess
+
+@inject IMovieInfoDb movieFromDb
+@inject IMovieAccessInfoApi movieFromApi
+@inject NavigationManager NavigationManager
 
 
 <h1 style="margin:auto;text-align:center;margin-bottom:10px">Movie list</h1>
 
 <form class="form-inline bg-info text-center rounded mt-5 mb-5 pl-2 mx-auto w-100">
-        <div class="form-group">
-            <p class="m-auto w-100 align-content-center">Search for any movie</p>
-        </div>
-        <div class="form-group mt-2 mb-2 ml-2 mr-2">
-            <label class="sr-only">Movie tite</label>
-            <input type="text" class="form-control" placeholder="Enter movie title">
-        </div>
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
+    <div class="form-group">
+        <p class="m-auto w-100 align-content-center">Search for any movie</p>
+    </div>
+    <div class="form-group mt-2 mb-2 ml-2 mr-2">
+        <label class="sr-only">Movie tite</label>
+        <input type="text" class="form-control" placeholder="Enter movie title" @bind="searchString">
+    </div>
+    <button type="submit" class="btn btn-primary" @onclick="GetMovieFromSearch">Search</button>
+</form>
+<span>@Error</span>
 
 <div style="justify-content:center">
     <div class="card-columns float-none mx-auto w-100">
-        <!--
 
-        foreach (var movie in MovieDTOs)
+
+        @*@foreach (var movie in MovieDTOs)
         {
-            <MovieHolderComponent movie="movie">
+
+        }*@
+
+
+        <div @onclick="@(e => GetMovieDetails(123))">
+            <MovieHolderComponent>
 
             </MovieHolderComponent>
-        }-->
-        <MovieHolderComponent>
-
-        </MovieHolderComponent>
-
+        </div>
         <MovieHolderComponent>
 
         </MovieHolderComponent>
@@ -56,6 +64,35 @@
 
 @code {
     private List<MovieDTO> MovieDTOs = new List<MovieDTO>();
+    private bool isLoading = false;
+    private string searchString = "";
+    private string Error;
+    private int movieId;
 
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true;
 
+        //MovieDTOs = await movieFromDb.GetAllMovies();
+
+        isLoading = false;
+    }
+
+    private async void GetMovieFromSearch()
+    {
+        if (!string.IsNullOrWhiteSpace(searchString))
+        {
+            MovieDTOs = await movieFromDb.GetSearchResults(searchString);
+        }
+        else
+        {
+            Error = "Field is empty";
+        }
+    }
+
+    public async void GetMovieDetails(int movieId)
+    {
+        Error = movieId.ToString();
+        NavigationManager.NavigateTo($"/movie/{movieId}");
+    }
 }

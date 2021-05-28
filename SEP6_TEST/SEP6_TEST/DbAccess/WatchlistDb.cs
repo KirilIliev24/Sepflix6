@@ -24,9 +24,26 @@ namespace SEP6_TEST.DbAccess
                 context.SaveChanges();
             }
         }
+        //maybe return boolean and update the frontend accordingly
         public void removeMovieFromWatchList(string username, int movieId)
         {
-            throw new NotImplementedException();
+            using (var context = new SqlServerSep6Context())
+            {
+                try
+                {
+                    bool exists = context.Watchlists.Any(u => u.MovieId == movieId && u.Username.Equals(username));
+                    if (exists == true)
+                    {
+                        var likedMovie = context.Watchlists.FirstOrDefault(u => u.MovieId == movieId && u.Username.Equals(username));
+                        context.Watchlists.Remove(likedMovie);
+                        context.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
         public async Task<List<MovieDTO>> GetAllMoviesInWatchList(string username)

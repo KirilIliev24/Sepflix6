@@ -8,7 +8,7 @@ namespace SEP6_TEST.DbAccess
     public interface IMovieInfoDb
     {
         public List<MovieDTO> MovieDTOs { get; }
-        public Task GetAllMovies();
+        public Task<List<MovieDTO>> GetAllMovies();
 
         public Task<MovieDTO> getMovieByID(int id);
 

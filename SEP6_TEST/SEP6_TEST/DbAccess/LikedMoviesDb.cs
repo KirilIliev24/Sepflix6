@@ -10,9 +10,11 @@ namespace SEP6_TEST.DbAccess
     public class LikedMoviesDb : ILikedMoviesDb
     {
         private MovieInfoDb MovieInfoDb = new MovieInfoDb();
-        public List<MovieDTO> movieDTOs = new List<MovieDTO>();
+        public List<MovieDTO> LinkedMovieDTOs = new List<MovieDTO>();
 
         private List<int> movieId = new List<int>();
+
+
         public void addMovieToLiked(string username, int movieId)
         {
             using (var context = new SqlServerSep6Context())
@@ -25,9 +27,26 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
+        //maybe return a bool if everything went well
         public void deleteALikedMovie(string username, int movieId)
         {
-            throw new NotImplementedException();
+            using (var context = new SqlServerSep6Context())
+            {
+                try
+                {
+                    bool exists = context.LikedMovies.Any(u => u.MovieId == movieId && u.Username.Equals(username));
+                    if(exists == true)
+                    {
+                        var likedMovie = context.LikedMovies.FirstOrDefault(u => u.MovieId == movieId && u.Username.Equals(username));
+                        context.LikedMovies.Remove(likedMovie);
+                        context.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
 
         public async Task<List<MovieDTO>> getAllLikedMovies(string username)
@@ -40,15 +59,15 @@ namespace SEP6_TEST.DbAccess
 
                     foreach (var id in movieId)
                     {
-                        movieDTOs.Add(await MovieInfoDb.getMovieByID(id));
+                        LinkedMovieDTOs.Add(await MovieInfoDb.getMovieByID(id));
                     }
-                    return movieDTOs;
+                    return LinkedMovieDTOs;
                 }
                 catch (Exception e)
                 {
 
                     Console.WriteLine(e.Message);
-                    return movieDTOs;
+                    return LinkedMovieDTOs;
                 }
             }
         }
