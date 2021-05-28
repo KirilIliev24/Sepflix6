@@ -27,6 +27,29 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
+        public bool islikedMovieInLikedDB(int movieId)
+        {
+            using (var context = new SqlServerSep6Context())
+            {
+                var exists = context.LikedMovies.Any(i => i.Movie.Id == movieId);
+
+                return exists;
+            }
+        }
+
+        public async void addLikedMovieToList(int movieId)
+        {
+            try
+            {
+                LinkedMovieDTOs.Add(await MovieInfoDb.getMovieByID(movieId));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+        }
+
         //maybe return a bool if everything went well
         public void deleteALikedMovie(string username, int movieId)
         {
@@ -77,5 +100,7 @@ namespace SEP6_TEST.DbAccess
             var exists = LinkedMovieDTOs.Any(i => i.Movie.Id == id);
             return exists;
         }
+
+        
     }
 }
