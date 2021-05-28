@@ -14,6 +14,7 @@
 @inject IUserDb currentUser
 @inject IMovieLogic movieLogic
 @inject IMovieReviewDb movieReview
+@inject ILikedMoviesLogic likedMovieLogic
 
 
 @if (isLoading == false)
@@ -57,8 +58,6 @@
 
         </div>
     </div>
-
-
 
     <br />
 
@@ -163,26 +162,31 @@ else
     protected async override Task OnInitializedAsync()
     {
         isLoading = true;
-        movie = await movieFromDb.getMovieByID(movieId);
-        await movieFromApi.GetAllMovieInfo(movieId);
-        movieBaseInfo = movieFromApi.movieBaseInfo;
-        reviews = await movieReview.getAllReviewsForMovie(movieId);
-        director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
+        //movie = await movieFromDb.getMovieByID(movieId);
+        //await movieFromApi.GetAllMovieInfo(movieId);
+        //movieBaseInfo = movieFromApi.movieBaseInfo;
+        //reviews = await movieReview.getAllReviewsForMovie(movieId);
+        //director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
 
-        movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
-        movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+        //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
+        //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
 
         isLoading = false;
     }
 
     private void AddToLiked()
     {
-        likedList.addMovieToLiked(currentUser.user.Username, movieId);
-        //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+        bool added = likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
+        if(added)
+        {
+            //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+        }
     }
 
     private void AddToWatchList()
     {
+
+        //use the watchmovielogic when implemented!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         watchList.addMovieToWatchlist(currentUser.user.Username, movieId);
         //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
     }
@@ -199,9 +203,9 @@ else
         //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
     }
 
-    private void RateMovie(int rate)
+    private async void RateMovie(int rate)
     {
-        movieLogic.updateVotesAndRating(movie, rate);
+        movie = await movieLogic.updateVotesAndRating(movie, rate);
     }
 
     private void SubmitReview()
