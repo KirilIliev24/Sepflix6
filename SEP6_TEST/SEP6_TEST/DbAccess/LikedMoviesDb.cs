@@ -72,19 +72,33 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
+        public async void deleteLikedMovieFromList(int movieId)
+        {
+            var movieDTO = await MovieInfoDb.getMovieByID(movieId);
+            LinkedMovieDTOs.Remove(movieDTO);
+        }
+
         public async Task<List<MovieDTO>> getAllLikedMovies(string username)
         {
+
             using (var context = new SqlServerSep6Context())
             {
                 try
                 {
-                    movieId = await Task.Run(() => context.LikedMovies.Where(u => u.Username.Equals(username)).Select(m => m.MovieId).ToList());
-
-                    foreach (var id in movieId)
+                    if (LinkedMovieDTOs.Count==0)
                     {
-                        LinkedMovieDTOs.Add(await MovieInfoDb.getMovieByID(id));
+                        movieId = await Task.Run(() => context.LikedMovies.Where(u => u.Username.Equals(username)).Select(m => m.MovieId).ToList());
+
+                        foreach (var id in movieId)
+                        {
+                            LinkedMovieDTOs.Add(await MovieInfoDb.getMovieByID(id));
+                        }
+                        return LinkedMovieDTOs;
                     }
-                    return LinkedMovieDTOs;
+                    else
+                    {
+                        return LinkedMovieDTOs;
+                    }
                 }
                 catch (Exception e)
                 {
