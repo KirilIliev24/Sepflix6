@@ -4,9 +4,14 @@
 @using SEP6_TEST.ApiModels
 @using SEP6_TEST.DbAccess
 @using SEP6_TEST.DTO
+@using SEP6_TEST.BussinesLogic
 @using SEP6_TEST.Enums
 @inject IMovieAccessInfoApi movieFromApi
 @inject IMovieInfoDb movieFromDb
+@inject IWatchListDb watchList
+@inject ILikedMoviesDb likedList
+@inject IUserDb currentUser
+@inject IMovieLogic movieLogic
 
 <h1 style="text-align:center">@MovieTitle</h1>
 <h6 style="text-align:center">Directed by @Director</h6>
@@ -40,7 +45,7 @@
             <div class="btn-group float-none" role="group" aria-label="First group">
                 @for (int i = 1; i <= 10; i++)
                 {
-                    <button type="button" class="btn btn-secondary border-info" value="@i">@i</button>
+                    <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(i))">@i</button>
                 }
                 @*<button type="button" class="btn btn-secondary border-info">1</button>
                 <button type="button" class="btn btn-secondary border-info">2</button>
@@ -64,8 +69,22 @@
 
 <div style="text-align:center;margin-bottom:10px">
     <div class="btn-group-lg float-none" role="group" aria-label="Second group">
-        <button type="button" class="btn btn-warning">Add To Favotites</button>
-        <button type="button" class="btn btn-info">Add To Watchlist</button>
+        @if (movieInLikedList == false)
+        {
+            <button type="button" class="btn btn-warning" @onclick="AddToLiked">Add To Liked</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-warning" @onclick="RemoveFromLiked">Remove from Liked</button>
+        }
+        @if (movieInWatchlist == false)
+        {
+            <button type="button" class="btn btn-info" @onclick="AddToWatchList">Add To Watchlist</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-info" @onclick="RemoveFromWatchList">Remove from Watchlist</button>
+        }
     </div>
 </div>
 
@@ -150,10 +169,35 @@
 
         director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
 
-
+        movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
+        movieInLikedList = likedList.IsMovieInLikedlist(movieId);
 
         isLoading = false;
     }
 
     //add methods for whatchlist and favorite and set the buttons to active only if the movies are not added
+    private void AddToLiked()
+    {
+        likedList.addMovieToLiked(currentUser.user.Username, movieId);
+    }
+
+    private void AddToWatchList()
+    {
+        watchList.addMovieToWatchlist(currentUser.user.Username, movieId);
+    }
+
+    private void RemoveFromLiked()
+    {
+        likedList.deleteALikedMovie(currentUser.user.Username, movieId);
+    }
+
+    private void RemoveFromWatchList()
+    {
+        watchList.removeMovieFromWatchList(currentUser.user.Username, movieId);
+    }
+
+    private void RateMovie(int rate)
+    {
+        movieLogic.updateVotesAndRating(movie, rate);
+    }
 }
