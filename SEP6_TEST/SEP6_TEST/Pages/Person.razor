@@ -5,24 +5,32 @@
 
 @inject IMovieAccessInfoApi movieApi
 
-<h1 style="text-align:center">@personName</h1>
 
-<br />
+@if (!isLoading)
+{
+    <h1 style="text-align:center">@CastMember.name</h1>
 
-<img style="margin-left:auto;margin-right:auto;display: block;border-radius:10px" src="/Images/diesel.png" alt="MovieImage" />
+    <br />
 
-<br />
+    <img style="margin-left:auto;margin-right:auto;display: block;border-radius:10px" src="/Images/diesel.png" alt="MovieImage" />
 
-<div class="card bg-info text-white">
-    <h5 class="card-header text-center ">Description</h5>
-    <h5 class="card-text text-center mb-2 mt-2">@personDesc</h5>
-</div>
+    <br />
 
-<br />
+    <div class="card bg-info text-white">
+        <h5 class="card-header text-center ">Description</h5>
+        <h5 class="card-text text-center mb-2 mt-2">@biography.biography</h5>
+    </div>
 
-<div class="card bg-info text-white w-25 m-auto">
-    <h5 class="card-text text-center mb-2 mt-2">Average movie rating @movieRating/10</h5>
-</div>
+    <br />
+
+    @*<div class="card bg-info text-white w-25 m-auto">
+        <h5 class="card-text text-center mb-2 mt-2">Average movie rating @movieRating/10</h5>
+    </div>*@
+}
+else
+{
+    <span>Loading</span>
+}
 
 
 <br />
@@ -35,16 +43,14 @@
 
 <div style="justify-content:center">
     <div class="card-columns float-none mx-auto w-100">-->
+@*@foreach (var movie in MovieDTOs)
+    {
 
-
-        @*@foreach (var movie in MovieDTOs)
-            {
-
-            }*@
+    }*@
 
 
 
-        <!--<MovieHolderComponent>
+<!--<MovieHolderComponent>
 
         </MovieHolderComponent>
 
@@ -76,14 +82,19 @@
     [Parameter] public PersonsBiography biography { get; set; }
     [Parameter] public CastMember CastMember { get; set; }
 
+    string pictureUrl;
     string personName { get; set; } = "vyn Djiesiel";
     string personDesc { get; set; } = "was once a fast boi, now iz a thic boi";
     string movieRating { get; set; } = "6.9";
 
+    private bool isLoading = false;
 
     protected async override Task OnInitializedAsync()
     {
+        isLoading = true;
         await movieApi.GetPersonsBioAsync(CastMember.id);
         biography = movieApi.bio;
+        pictureUrl = $"https://image.tmdb.org/t/p/w500/{CastMember.profile_path}";
+        isLoading = false;
     }
 }
