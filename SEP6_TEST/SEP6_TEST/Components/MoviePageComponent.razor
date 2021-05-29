@@ -13,9 +13,10 @@
 @inject ILikedMoviesDb likedList*@
 @inject IUserDb currentUser
 @inject IMovieLogic movieLogic
-@inject IMovieReviewDb movieReview
+@*@inject IMovieReviewDb movieReview*@
 @inject ILikedMoviesLogic likedMovieLogic
 @inject IWacthlistLogic watchMovieLogic
+@inject IMovieReviewLogic movieReviewLogic
 
 
 @if (isLoading == false)
@@ -134,7 +135,7 @@ else
     public MovieDTO movie { get; set; }
     public List<MovieReview> reviews { get; set; } = new List<MovieReview>();
     private MovieBaseInfo movieBaseInfo { get; set; } = new MovieBaseInfo();
-    private CrewMember director;
+    private CrewMember director = new CrewMember();
 
     private bool isLoading = false;
     private bool movieInWatchlist = false;
@@ -142,34 +143,18 @@ else
 
     private string reviewText = "";
 
-    private string Test = "";
-
-    //string MovieTitle = "MovieTitle";
-    //string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
-    //string Actors = "Bob, roocs, aosndlaskn, ,asndlknkfa, ,as";
-    //string Director = "Harambe";
-    //string Rating = "5.6";
-    //string Votes = "321";
-
-
-    //protected override async Task OnAfterRenderAsync()
-    //{
-
-    //}
-
-    //protected override bool ShouldRender()
-    //{
-    //    return true;
-    //}
-
     protected async override Task OnInitializedAsync()
     {
         isLoading = true;
         movie = await movieFromDb.getMovieByID(movieId);
         await movieFromApi.GetAllMovieInfo(movieId);
         movieBaseInfo = movieFromApi.movieBaseInfo;
-        reviews = await movieReview.getAllReviewsForMovie(movieId);
+        reviews = await movieReviewLogic.getAllMovieReviews(movieId);
         director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
+        if(director == null)
+        {
+            director = new CrewMember();
+        }
 
         movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
         movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
@@ -177,13 +162,11 @@ else
         isLoading = false;
     }
 
+
     private void AddToLiked()
     {
-        bool added = likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
-        if (added)
-        {
-            movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
-        }
+        likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
+        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
     }
 
     private void AddToWatchList()
@@ -210,9 +193,10 @@ else
         movie = await movieLogic.updateVotesAndRating(movie, rate);
     }
 
-    private void SubmitReview()
+    private async Task SubmitReview()
     {
-        movieReview.addReview(currentUser.user.Username, movieId, reviewText);
+        movieReviewLogic.addNewReview(currentUser.user.Username, movieId, reviewText);
+        reviews = await movieReviewLogic.getAllMovieReviews(movieId);
         reviewText = "";
     }
 }
