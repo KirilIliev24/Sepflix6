@@ -1,5 +1,9 @@
 ﻿@page "/star"
 @using SEP6_TEST.Components;
+@using SEP6_TEST.ApiModels;
+@using SEP6_TEST.ApiAccess;
+
+@inject IMovieAccessInfoApi movieApi
 
 <h1 style="text-align:center">@personName</h1>
 
@@ -20,14 +24,17 @@
     <h5 class="card-text text-center mb-2 mt-2">Average movie rating @movieRating/10</h5>
 </div>
 
+
 <br />
 
-<h1 style="text-align:center">Known from the following movies</h1>
+@*maybe we will do it, just maybe*@
+
+<!--<h1 style="text-align:center">Known from the following movies</h1>
 
 <br />
 
 <div style="justify-content:center">
-    <div class="card-columns float-none mx-auto w-100">
+    <div class="card-columns float-none mx-auto w-100">-->
 
 
         @*@foreach (var movie in MovieDTOs)
@@ -37,7 +44,7 @@
 
 
 
-        <MovieHolderComponent>
+        <!--<MovieHolderComponent>
 
         </MovieHolderComponent>
 
@@ -59,17 +66,24 @@
 
 
     </div>
-</div>
-
-
+</div>-->
 
 
 
 
 
 @code {
+    [Parameter] public PersonsBiography biography { get; set; }
+    [Parameter] public CastMember CastMember { get; set; }
+
     string personName { get; set; } = "vyn Djiesiel";
     string personDesc { get; set; } = "was once a fast boi, now iz a thic boi";
     string movieRating { get; set; } = "6.9";
 
+
+    protected async override Task OnInitializedAsync()
+    {
+        await movieApi.GetPersonsBioAsync(CastMember.id);
+        biography = movieApi.bio;
+    }
 }
