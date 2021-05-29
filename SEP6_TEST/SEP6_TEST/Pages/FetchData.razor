@@ -42,11 +42,11 @@ else
         await moviesDb.GetAllMovies();
         MovieDTOs = moviesDb.MovieDTOs;
 
-        foreach (var movieDto in MovieDTOs)
-        {
-            await movieApi.GetMoviePosterAsync(movieDto.Movie.Id);
-            movieDto.Poster = movieApi.movieBaseInfo.posters.First().file_path;
-        }
+        //foreach (var movieDto in MovieDTOs)
+        //{
+        //    await movieApi.GetMoviePosterAsync(movieDto.Movie.Id);
+        //    movieDto.Poster = movieApi.movieBaseInfo.posters.First().file_path;
+        //}
 
         //await movieApi.GetMoviePosterAsync(15414);
         //await movieApi.GetMovieCreditsAsync(15414);

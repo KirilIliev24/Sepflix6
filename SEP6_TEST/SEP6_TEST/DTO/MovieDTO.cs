@@ -10,6 +10,6 @@ namespace SEP6_TEST.DTO
     {
         public Movie Movie { get; set; }
         public Rating Rating { get; set; }
-        public string Poster { get; set; }
+        //public string Poster { get; set; }
     }
 }

@@ -3,9 +3,13 @@
 @using DbAccess
 @inject IUserDb user
 
-<div class="sidebar" hidden="@NavMenuHide">
-    <NavMenu />
-</div>
+@if (!string.IsNullOrEmpty(user.user.Username))
+{
+    <div class="sidebar" hidden="@NavMenuHide">
+        <NavMenu />
+    </div>
+}
+
 
 <div class="main">
 
@@ -17,19 +21,33 @@
 
 
 @code
-{   
+{
     private bool hideNavMenu = false;
     private string NavMenuHide => hideNavMenu ? "hidden" : null;
 
-    protected override void OnInitialized()
+    //protected override void OnInitialized()
+    //{
+    //    if (string.IsNullOrWhiteSpace(user.user.Username))
+    //    {
+    //        hideNavMenu = true;
+    //    }
+    //    else
+    //    {
+    //        hideNavMenu = false;
+    //    }
+    //}
+
+    protected override void OnAfterRender(bool firstRender)
     {
-        //if (string.IsNullOrWhiteSpace(user.user.Username))
-        //{
-        //    hideNavMenu = true;
-        //}
-        //else
-        //{
-        //    hideNavMenu = false;
-        //}
+        if (string.IsNullOrEmpty(user.user.Username))
+        {
+            hideNavMenu = true;
+        }
+        else
+        {
+            hideNavMenu = false;
+        }
     }
+
+
 }

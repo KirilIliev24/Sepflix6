@@ -32,8 +32,8 @@ namespace SEP6_TEST
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<IMovieAccessInfoApi, MovieInfoApi>(); //- scope is like Singleton, but for a specific client
-            services.AddScoped<IMovieInfoDb, MovieInfoDb>();
-            services.AddScoped<IUserDb, UserDb>();
+            services.AddSingleton<IMovieInfoDb, MovieInfoDb>();
+            services.AddSingleton<IUserDb, UserDb>();
             services.AddScoped<ILikedMoviesDb, LikedMoviesDb>();
             services.AddScoped<IWatchListDb, WatchlistDb>();
             services.AddScoped<IMovieLogic, MovieLogic>();

@@ -6,21 +6,24 @@
 
 
 <div class="card text-white bg-transparent border-info shadow w-auto" style="width: 18rem;">
-    <img class="card-img-top border-info rounded" src="/Images/diesel.png" alt="Movie Image">
+    @if (!string.IsNullOrEmpty(movie.Movie.Poster))
+    {
+        <img class="card-img-top border-info rounded" src="@movie.Movie.Poster" alt="Movie Image" width="617" height="625" >
+    }
+    else
+    {
+        <img class="card-img-top border-info rounded" src="/Images/diesel.png" alt="Movie Image" width="617" height="625">
+    }
     <div class="card-body">
-        <h5 class="card-title text-center font-weight-bold border-info">@title</h5>
+        <h5 class="card-title text-center font-weight-bold border-info">@movie.Movie.Title</h5>
     </div>
     <div class="card-footer bg-info border-info">
-        <h6>Year: @year</h6>
-        <h6>Rating: @rating/10 out of @votes ratings</h6>
+        <h6>Year: @movie.Movie.Year</h6>
+        <h6>Rating: @movie.Rating.Rating1/10 out of @movie.Rating.Votes ratings</h6>
     </div>
 </div>
 
 
 @code {
-    string title = "Movietiemie";
-    string year = "1999";
-    string rating = "5.6";
-    string votes = "321";
-    //[Parameter] public MovieDTO movie { get; set; }
+    [Parameter] public MovieDTO movie { get; set; }
 }

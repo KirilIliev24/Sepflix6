@@ -19,32 +19,36 @@
 
 @if (isLoading == false)
 {
-    <h1 style="text-align:center">@MovieTitle</h1>
-    <h6 style="text-align:center">Directed by @Director</h6>
+    <h1 style="text-align:center">@movie.Movie.Title</h1>
+    <h6 style="text-align:center">Directed by @director.name</h6>
 
     <br />
-    <img style="margin-left:auto;margin-right:auto;display: block;" src="/Images/diesel.png" alt="MovieImage" />
+    <img style="margin-left:auto;margin-right:auto;display: block;" src="@movie.Movie.Poster" alt="MovieImage" />
     <br />
 
 
-    <div class="card bg-info text-white">
-        <h5 class="card-header text-center ">Actors</h5>
-        <h5 class="card-text text-center mb-2 mt-2">@Actors</h5>
-    </div>
+    @foreach (var actor in movieBaseInfo.cast)
+    {
+        <div class="card bg-info text-white">
+            <h5 class="card-header text-center ">Actors</h5>
+            <h5 class="card-text text-center mb-2 mt-2">@actor.name</h5>
+        </div>
+    }
+
 
     <br />
 
     <div class="card bg-info text-white mb-3">
         <h5 class="card-header text-center">Description</h5>
-        <h5 class="card-text text-center mb-2 mt-2">@MovieDesc</h5>
+        <h5 class="card-text text-center mb-2 mt-2">@movieBaseInfo.overview</h5>
     </div>
 
     <br />
 
     <div class="card bg-info text-white align-items-center">
-        <h5 class="card-header text-center">Rated @Rating by viewers</h5>
+        <h5 class="card-header text-center">Rated @movie.Rating.Rating1 by viewers</h5>
         <div class="card-body">
-            <h5 class="card-title text-center">@Votes ratings in total</h5>
+            <h5 class="card-title text-center">@movie.Rating.Votes ratings in total</h5>
 
             <div class="card-footer">
                 <p class="card-text text-center">Your Rating</p>
@@ -95,14 +99,6 @@
                 </div>
             </div>
         }
-
-        <div class="card bg-transparent">
-            <div class="card-body">
-                <ReviewComponent>
-
-                </ReviewComponent>
-            </div>
-        </div>
     </div>
 
     <br />
@@ -141,12 +137,12 @@ else
 
     private string Test = "";
 
-    string MovieTitle = "MovieTitle";
-    string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
-    string Actors = "Bob, roocs, aosndlaskn, ,asndlknkfa, ,as";
-    string Director = "Harambe";
-    string Rating = "5.6";
-    string Votes = "321";
+    //string MovieTitle = "MovieTitle";
+    //string MovieDesc = "Following the events of 'Avengers: Endgame,' Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities -- and their patience.";
+    //string Actors = "Bob, roocs, aosndlaskn, ,asndlknkfa, ,as";
+    //string Director = "Harambe";
+    //string Rating = "5.6";
+    //string Votes = "321";
 
 
     //protected override async Task OnAfterRenderAsync()
@@ -162,14 +158,14 @@ else
     protected async override Task OnInitializedAsync()
     {
         isLoading = true;
-        //movie = await movieFromDb.getMovieByID(movieId);
-        //await movieFromApi.GetAllMovieInfo(movieId);
-        //movieBaseInfo = movieFromApi.movieBaseInfo;
-        //reviews = await movieReview.getAllReviewsForMovie(movieId);
-        //director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
+        movie = await movieFromDb.getMovieByID(movieId);
+        await movieFromApi.GetAllMovieInfo(movieId);
+        movieBaseInfo = movieFromApi.movieBaseInfo;
+        reviews = await movieReview.getAllReviewsForMovie(movieId);
+        director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
 
-        //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
-        //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+        movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
+        movieInLikedList = likedList.IsMovieInLikedlist(movieId);
 
         isLoading = false;
     }
@@ -177,7 +173,7 @@ else
     private void AddToLiked()
     {
         bool added = likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
-        if(added)
+        if (added)
         {
             //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
         }

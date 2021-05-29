@@ -32,7 +32,7 @@ namespace SEP6_TEST.DbAccess
 
                         }
                         await GetMovieRating();
-                        await GetAllMoviePosters();
+                        
                         return MovieDTOs;
                     }
                     else
@@ -66,7 +66,7 @@ namespace SEP6_TEST.DbAccess
                    
                     movieDTO.Movie = context.Movies.Find(id);
                     movieDTO.Rating = await getRating(id);
-                    movieDTO.Poster = await getMoviePoster(id);
+                    //movieDTO.Poster = await getMoviePoster(id);
                     return movieDTO;
                 }
                 catch (Exception e)
@@ -146,23 +146,23 @@ namespace SEP6_TEST.DbAccess
             return result;
         }
 
-        public async Task<string> getMoviePoster(int movieId)
-        {
-            using (var context = new SqlServerSep6Context())
-            {
-                try
-                {
-                    string poster = await Task.Run(() => context.Movies.Where(m => m.Id.Equals(movieId)).Select(p => p.Poster).ToString());
-                    return poster;
-                }
-                catch (Exception e)
-                {
+        //public async Task<string> getMoviePoster(int movieId)
+        //{
+        //    using (var context = new SqlServerSep6Context())
+        //    {
+        //        try
+        //        {
+        //            string poster = await Task.Run(() => context.Movies.Where(m => m.Id.Equals(movieId)).Select(p => p.Poster).ToString());
+        //            return poster;
+        //        }
+        //        catch (Exception e)
+        //        {
 
-                    Console.WriteLine(e.Message);
-                    return "Poster unavailable";
-                }
-            }
-        }
+        //            Console.WriteLine(e.Message);
+        //            return "Poster unavailable";
+        //        }
+        //    }
+        //}
 
         private async Task GetAllMoviePosters()
         {
@@ -173,7 +173,7 @@ namespace SEP6_TEST.DbAccess
                     foreach (var movie in MovieDTOs)
                     {
                         string poster = await Task.Run(()=> context.Movies.Where(m => m.Id.Equals(movie.Movie.Id)).Select(p => p.Poster).FirstOrDefault());
-                        movie.Poster = poster;
+                        //movie.Poster = poster;
                     }
                 }
                 catch (Exception e)
