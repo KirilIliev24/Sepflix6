@@ -24,6 +24,30 @@ namespace SEP6_TEST.DbAccess
                 context.SaveChanges();
             }
         }
+
+        public bool islikedMovieInWatchlistDB(int movieId)
+        {
+            using (var context = new SqlServerSep6Context())
+            {
+                var exists = context.Watchlists.Any(i => i.Movie.Id == movieId);
+
+                return exists;
+            }
+        }
+
+        public async void addWatchlistMovieToList(int movieId)
+        {
+            try
+            {
+                WatchlistDTOs.Add(await MovieInfoDb.getMovieByID(movieId));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+        }
+
         //maybe return boolean and update the frontend accordingly
         public void removeMovieFromWatchList(string username, int movieId)
         {
@@ -78,6 +102,11 @@ namespace SEP6_TEST.DbAccess
             var exists = WatchlistDTOs.Any(i => i.Movie.Id == id);
             return exists;
         }
-        
+
+        public async void deleteWatchlistMovieFromList(int movieId)
+        {
+            var movieDTO = await MovieInfoDb.getMovieByID(movieId);
+            WatchlistDTOs.Remove(movieDTO);
+        }
     }
 }
