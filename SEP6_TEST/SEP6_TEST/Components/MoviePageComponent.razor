@@ -31,47 +31,14 @@
         <h5 class="card-header text-center ">Actors</h5>
         <div class="container-fluid py-2">
             <div class="d-flex flex-row flex-nowrap">
-                <ActorComponent>
-
-                </ActorComponent>
-                <ActorComponent>
-
-                </ActorComponent>
-                <ActorComponent>
-
-                </ActorComponent>
-                <ActorComponent>
-
-                </ActorComponent>
-                <ActorComponent>
-
-                </ActorComponent>
-                <ActorComponent>
-
-                </ActorComponent>
-                <ActorComponent>
+               
 
             @foreach (var actor in movieBaseInfo.cast)
             {
-                <ActorComponent castMember="actor">
+                <ActorComponent castMember="actor" />
+            }
 
-            <ActorComponent>
-
-            </ActorComponent>
-
-            <ActorComponent>
-
-            </ActorComponent>
-            <ActorComponent>
-
-            </ActorComponent>
-            <ActorComponent>
-
-            </ActorComponent>
-            <ActorComponent>
-
-            </ActorComponent>
-
+            </div>
         </div>
     </div>
 
