@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SEP6_TEST.Models
 {
-    [Keyless]
     [Table("ratings")]
     public partial class Rating
     {
@@ -18,5 +17,8 @@ namespace SEP6_TEST.Models
         public double Rating1 { get; set; }
         [Column("votes")]
         public int Votes { get; set; }
+        [Key]
+        [Column("rating_Id")]
+        public int RatingId { get; set; }
     }
 }
