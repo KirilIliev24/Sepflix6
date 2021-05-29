@@ -1,0 +1,18 @@
+﻿@page "/ac"
+
+
+
+<div class="card text-white bg-transparent w-25" style="width: 18rem;">
+    <img class="card-img-top rounded" src="/Images/diesel.png" alt="Actor Image">
+    <div class="card-body pt-1 pl-1">
+        <h5 class="card-title text-wrap">@actorName</h5>
+        <h6 class="text-muted text-wrap">@actorRole</h6>
+    </div>
+</div>
+
+
+@code {
+
+    string actorName { get; set; } = "Djisel Supafast";
+    string actorRole { get; set; } = "Speedy Gonzalez";
+}
