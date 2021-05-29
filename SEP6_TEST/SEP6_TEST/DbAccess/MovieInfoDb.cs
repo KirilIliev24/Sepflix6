@@ -147,7 +147,9 @@ namespace SEP6_TEST.DbAccess
                 {
                     foreach (var m in MovieDTOs)
                     {
-                        if (m.Movie.Title.Contains(searchPhrase))
+                        string movieTitle = m.Movie.Title.ToLowerInvariant();
+                        string phrase = searchPhrase.ToLowerInvariant();
+                        if (movieTitle.Contains(phrase))
                         {
                             result.Add(m);
                         }
