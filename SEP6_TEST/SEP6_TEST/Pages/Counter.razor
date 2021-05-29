@@ -19,7 +19,7 @@
     </div>
     <div class="form-group mt-2 mb-2 ml-2 mr-2">
         <label class="sr-only">Movie tite</label>
-        <input type="text" class="form-control" placeholder="Enter movie title" @bind="searchString">
+        <input type="text" class="form-control" placeholder="Enter movie title" value="@searchString" @oninput="(e)=> searchString = e.Value.ToString()">
     </div>
     <button type="button" class="btn btn-primary" @onclick="GetMovieFromSearch">Search</button>
 </form>
@@ -64,7 +64,7 @@ else
         isLoading = false;
     }
 
-    private async void GetMovieFromSearch()
+    private async Task GetMovieFromSearch()
     {
         if (!string.IsNullOrWhiteSpace(searchString))
         {
@@ -76,7 +76,7 @@ else
             }
         }
         else
-        {  
+        {
             MovieDTOs = await movieFromDb.GetAllMovies();
             isLoading = false;
         }
