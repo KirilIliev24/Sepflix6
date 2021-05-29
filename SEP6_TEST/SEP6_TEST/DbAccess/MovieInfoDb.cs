@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SEP6_TEST.DTO;
 using SEP6_TEST.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SEP6_TEST.DbAccess
 {
@@ -110,9 +111,20 @@ namespace SEP6_TEST.DbAccess
                 try
                 {
                     movie = await getMovieByID(movieDTO.Movie.Id);
-                    movie.Rating.Rating1 = movieDTO.Rating.Rating1;
-                    movie.Rating.Votes = movieDTO.Rating.Votes;
-                    context.SaveChanges();
+
+                    var rating = context.Ratings.FirstOrDefault(i => i.MovieId == movieDTO.Movie.Id);
+                    if(rating != null)
+                    {
+                        rating.Rating1 = movieDTO.Rating.Rating1;
+                        rating.Votes = movieDTO.Rating.Votes;
+                        context.Entry(rating).State = EntityState.Modified;
+                        context.SaveChanges();
+                    }
+
+                    //movie.Rating.Rating1 = movieDTO.Rating.Rating1;
+                    //movie.Rating.Votes = movieDTO.Rating.Votes;
+                    //context.Ratings.Update();
+                    //context.SaveChanges();
 
                     return movie;
 
