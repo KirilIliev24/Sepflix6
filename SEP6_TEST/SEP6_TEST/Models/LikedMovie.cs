@@ -11,15 +11,15 @@ namespace SEP6_TEST.Models
     [Table("likedMovies")]
     public partial class LikedMovie
     {
+        [Key]
+        [Column("likedMovies_id")]
+        public int LikedMoviesId { get; set; }
         [Required]
         [Column("username")]
         [StringLength(30)]
         public string Username { get; set; }
         [Column("movie_id")]
         public int MovieId { get; set; }
-        [Key]
-        [Column("Liked_Id")]
-        public int LikedId { get; set; }
 
         [ForeignKey(nameof(MovieId))]
         [InverseProperty("LikedMovies")]
