@@ -1,4 +1,4 @@
-﻿@page "/star"
+﻿@page "/person/{id:int}"
 @using SEP6_TEST.Components;
 @using SEP6_TEST.ApiModels;
 @using SEP6_TEST.ApiAccess;
@@ -8,7 +8,7 @@
 
 @if (!isLoading)
 {
-    <h1 style="text-align:center">@CastMember.name</h1>
+    <h1 style="text-align:center">@biography.name</h1>
 
     <br />
 
@@ -87,8 +87,10 @@ else
 
 
 @code {
-    [Parameter] public PersonsBiography biography { get; set; }
-    [Parameter] public CastMember CastMember { get; set; }
+    [Parameter] public int id { get; set; }
+    private PersonsBiography biography { get; set; }
+    //[Parameter] public CastMember CastMember { get; set; }
+
 
     string pictureUrl;
     string personName { get; set; } = "vyn Djiesiel";
@@ -111,9 +113,10 @@ else
     protected async override Task OnInitializedAsync()
     {
         isLoading = true;
-        await movieApi.GetPersonsBioAsync(CastMember.id);
+        await movieApi.GetPersonsBioAsync(id);
+
         biography = movieApi.bio;
-        pictureUrl = $"https://image.tmdb.org/t/p/w500/{CastMember.profile_path}";
+        pictureUrl = $"https://image.tmdb.org/t/p/w500/{biography.profile_path}";
         isLoading = false;
     }
 }

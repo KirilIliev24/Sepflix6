@@ -9,11 +9,8 @@
 @using SEP6_TEST.Models
 @inject IMovieAccessInfoApi movieFromApi
 @inject IMovieInfoDb movieFromDb
-@*@inject IWatchListDb watchList
-@inject ILikedMoviesDb likedList*@
 @inject IUserDb currentUser
 @inject IMovieLogic movieLogic
-@*@inject IMovieReviewDb movieReview*@
 @inject ILikedMoviesLogic likedMovieLogic
 @inject IWacthlistLogic watchMovieLogic
 @inject IMovieReviewLogic movieReviewLogic
@@ -33,10 +30,18 @@
         <div class="card-body">
             <div class="scrolling-wrapper row flex-row flex-nowrap mx-auto bg-info rounded">
 
-
+                <div class="col-2" @onclick="@(a => SeePersonBio(director.id))">
+                    <div class="card text-white bg-transparent border-0 mt-3" style="width: 9rem;">
+                        <img class="card-img-top rounded" src="@directorsUrl" alt="Direcors Image">
+                        <div class="card-body pt-1 pl-1">
+                            <h5 class="card-title text-wrap">@director.name</h5>
+                            <h6 class="text-muted text-wrap">@director.job</h6>
+                        </div>
+                    </div>
+                </div>
                 @foreach (var actor in movieBaseInfo.cast)
                 {
-                    <div class="col-2">
+                    <div class="col-2" @onclick="@(a => SeePersonBio(actor.id))">
                         <ActorComponent castMember="actor" />
                     </div>
                 }
@@ -138,6 +143,7 @@ else
     public List<MovieReview> reviews { get; set; } = new List<MovieReview>();
     private MovieBaseInfo movieBaseInfo { get; set; } = new MovieBaseInfo();
     private CrewMember director = new CrewMember();
+    private string directorsUrl;
 
     private bool isLoading = false;
     private bool movieInWatchlist = false;
@@ -159,6 +165,7 @@ else
         {
             director = new CrewMember();
         }
+        directorsUrl = $"https://image.tmdb.org/t/p/w500/{director.profile_path}";
 
         movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
         movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
@@ -203,6 +210,11 @@ else
         movieReviewLogic.addNewReview(currentUser.user.Username, movieId, reviewText);
         reviews = await movieReviewLogic.getAllMovieReviews(movieId);
         reviewText = "";
+    }
+
+    private void SeePersonBio(int id)
+    {
+        NavigationManager.NavigateTo($"/person/{id}");
     }
 }
 

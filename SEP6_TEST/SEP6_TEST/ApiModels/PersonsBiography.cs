@@ -12,5 +12,6 @@ namespace SEP6_TEST.ApiModels
         public string deathday { get; set; }
         public string biography { get; set; }
         public string place_of_birth { get; set; }
+        public string profile_path { get; set; }
     }
 }
