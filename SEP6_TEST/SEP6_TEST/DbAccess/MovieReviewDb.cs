@@ -20,7 +20,7 @@ namespace SEP6_TEST.DbAccess
                 movieReview.Username = username;
                 movieReview.MovieId = movieId;
                 movieReview.ReviewText = reviewText;
-                
+                context.MovieReviews.Add(movieReview);
                 context.SaveChanges();
             }
         }
@@ -30,6 +30,7 @@ namespace SEP6_TEST.DbAccess
             
             using (var context = new SqlServerSep6Context())
             {
+                List<MovieReview> localReviews = new List<MovieReview>();
                 try
                 {
                     //could have gotten full objects of review, not just ids
@@ -37,8 +38,9 @@ namespace SEP6_TEST.DbAccess
 
                     foreach (var id in reviewIDs)
                     {
-                        reviews.Add(getReviewByID(id));
+                        localReviews.Add(getReviewByID(id));
                     }
+                    reviews = localReviews;
                     return reviews;
                 }
                 catch (Exception e)

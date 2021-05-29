@@ -5,7 +5,6 @@
 
 
 <form>
-    <p>@error</p>
     <div class="form-group">
         <label for="InputEmail">Email address</label>
         <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email" @bind=Email>
@@ -17,6 +16,7 @@
     </div>
 </form>
 <button class="btn btn-primary" @onclick=AttempLogin>Login</button>
+<span id="errorMessage">@error</span>
 
 @code {
 
@@ -33,8 +33,8 @@
             isValid = user.getUserByName(Email);
             if(isValid)
             {
-                error = "No error";
                 //navigate to all movies (couter will be transformed to view all movies)
+                error = "Valid credential, please wait...";
                 NavigationManager.NavigateTo("/counter", true);
             }
             else
@@ -50,5 +50,7 @@
 }
 
 <style>
-  
+    #errorMessage{
+        margin-left: 15px;
+    }
 </style>

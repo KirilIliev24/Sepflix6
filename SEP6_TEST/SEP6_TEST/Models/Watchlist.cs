@@ -11,15 +11,15 @@ namespace SEP6_TEST.Models
     [Table("watchlist")]
     public partial class Watchlist
     {
+        [Key]
+        [Column("watchlist_id")]
+        public int WatchlistId { get; set; }
         [Required]
         [Column("username")]
         [StringLength(30)]
         public string Username { get; set; }
         [Column("movie_id")]
         public int MovieId { get; set; }
-        [Key]
-        [Column("Watchlist_Id")]
-        public int WatchlistId { get; set; }
 
         [ForeignKey(nameof(MovieId))]
         [InverseProperty("Watchlists")]

@@ -2,18 +2,13 @@
 
 <div class="card text-white bg-info overflow-auto" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title pt-2">Review by @Username</h5>
+        <h5 class="card-title pt-2">Review by @Review.Username</h5>
         
-        <p class="card-text">@ReviewText</p>
+        <p class="card-text">@Review.ReviewText</p>
         
     </div>
 </div>
 
 @code {
     [Parameter] public MovieReview Review { get; set; }
-    public string Username = "Bob";
-    public int MovieId = 12;
-    public string ReviewText = "Gucci movie, had adam sandler and stuff";
-    public decimal? Rating = 3;
-    public int? Votes = 26;
 }
