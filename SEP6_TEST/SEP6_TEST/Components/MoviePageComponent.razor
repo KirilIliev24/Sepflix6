@@ -31,21 +31,13 @@
         <h5 class="card-header text-center ">Actors</h5>
         <div class="card-group bg-transparent p-2">
 
-        <!-- @foreach (var actor in movieBaseInfo.cast)-->
+            @foreach (var actor in movieBaseInfo.cast)
+            {
+                <ActorComponent castMember="actor">
 
-            <ActorComponent>
+                </ActorComponent>
+            }
 
-            </ActorComponent>
-
-            <ActorComponent>
-
-            </ActorComponent>
-            <ActorComponent>
-
-            </ActorComponent>
-            <ActorComponent>
-
-            </ActorComponent>
             <ActorComponent>
 
             </ActorComponent>
@@ -192,7 +184,7 @@ else
         bool added = likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
         if (added)
         {
-            //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+            movieInLikedList = likedList.IsMovieInLikedlist(movieId);
         }
     }
 

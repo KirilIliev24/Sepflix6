@@ -1,18 +1,22 @@
-﻿@page "/ac"
-
-
+﻿
+@using SEP6_TEST.ApiModels
 
 <div class="card text-white bg-transparent w-25" style="width: 18rem;">
-    <img class="card-img-top rounded" src="/Images/diesel.png" alt="Actor Image">
+    <img class="card-img-top rounded" src="@pictureUrl" alt="Actor Image">
     <div class="card-body pt-1 pl-1">
-        <h5 class="card-title text-wrap">@actorName</h5>
-        <h6 class="text-muted text-wrap">@actorRole</h6>
+        <h5 class="card-title text-wrap">@castMember.name</h5>
+        <h6 class="text-muted text-wrap">@castMember.character</h6>
     </div>
 </div>
 
 
 @code {
+    [Parameter] public CastMember castMember { get; set; } = new CastMember();
+    string pictureUrl;
 
-    string actorName { get; set; } = "Djisel Supafast";
-    string actorRole { get; set; } = "Speedy Gonzalez";
+    //need to add a check for the picture
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Run(() => pictureUrl = $"https://image.tmdb.org/t/p/w500/{castMember.profile_path}");
+    }
 }
