@@ -11,6 +11,8 @@ namespace SEP6_TEST.BussinesLogic
         public bool addMovieToWatchlist(string username, int movieId);
         public bool removeMovieFromWatchlist(string username, int movieId);
 
-        public Task<List<MovieDTO>> getAllMoviesInWatchlist(string username); 
+        public Task<List<MovieDTO>> getAllMoviesInWatchlist(string username);
+
+        public bool isMovieWatchlistInDB(int movieId);
     }
 }

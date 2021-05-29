@@ -19,11 +19,12 @@ namespace SEP6_TEST.BussinesLogic
 
         public bool addMoviesToLiked(string username, int movieId)
         {
-            LikedMoviesDb.addMovieToLiked(username, movieId);
+            
             var exists = LikedMoviesDb.islikedMovieInLikedDB(movieId);
 
-            if (exists)
+            if (!exists)
             {
+                LikedMoviesDb.addMovieToLiked(username, movieId);
                 LikedMoviesDb.addLikedMovieToList(movieId);
                 return exists;
             }
@@ -40,8 +41,18 @@ namespace SEP6_TEST.BussinesLogic
 
             if (!exists)
             {
-                LikedMoviesDb.deleteLikedMovieFromList(movieId);
-                return exists;
+                var isInList = LikedMoviesDb.IsMovieInLikedlist(movieId);
+
+                if (isInList)
+                {
+                    LikedMoviesDb.deleteLikedMovieFromList(movieId);
+                    return exists;
+                }
+                else
+                {
+                    return exists;
+                }
+                
             }
             else
             {
@@ -53,6 +64,11 @@ namespace SEP6_TEST.BussinesLogic
         {
             return await LikedMoviesDb.getAllLikedMovies(username);
         }
-       
+
+        public bool isMovieInLikedDB(int movieId)
+        {
+            var isInDb = LikedMoviesDb.islikedMovieInLikedDB(movieId);
+            return isInDb;
+        }
     }
 }

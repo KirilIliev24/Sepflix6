@@ -40,6 +40,12 @@ namespace SEP6_TEST.BussinesLogic
             return await WatchListDb.GetAllMoviesInWatchList(username);
         }
 
+        public bool isMovieWatchlistInDB(int movieId)
+        {
+            var isInDb = WatchListDb.islikedMovieInWatchlistDB(movieId);
+            return isInDb;
+        }
+
         public bool removeMovieFromWatchlist(string username, int movieId)
         {
             WatchListDb.removeMovieFromWatchList(username, movieId);

@@ -13,5 +13,7 @@ namespace SEP6_TEST.BussinesLogic
         public bool deleteMoviesFromLiked(string username, int movieId);
 
         public Task<List<MovieDTO>> getAllLikedMovies(string username);
+
+        public bool isMovieInLikedDB(int movieId);
     }
 }
