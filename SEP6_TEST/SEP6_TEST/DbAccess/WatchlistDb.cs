@@ -35,7 +35,7 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
-        public async void addWatchlistMovieToList(int movieId)
+        public async Task addWatchlistMovieToList(int movieId)
         {
             try
             {
@@ -77,15 +77,22 @@ namespace SEP6_TEST.DbAccess
 
                 try
                 {
-                    movieId = await Task.Run(() => context.Watchlists.Where(n => n.Username.Equals(username)).Select(w => w.MovieId).ToList());
-
-                    foreach (var movie in movieId)
+                    if (WatchlistDTOs.Count==0)
                     {
-                        WatchlistDTOs.Add(await MovieInfoDb.getMovieByID(movie));
+                        movieId = await Task.Run(() => context.Watchlists.Where(n => n.Username.Equals(username)).Select(w => w.MovieId).ToList());
+
+                        foreach (var movie in movieId)
+                        {
+                            WatchlistDTOs.Add(await MovieInfoDb.getMovieByID(movie));
 
 
+                        }
+                        return WatchlistDTOs;
                     }
-                    return WatchlistDTOs;
+                    else
+                    {
+                        return WatchlistDTOs;
+                    }
                 }
                 catch (Exception e)
                 {

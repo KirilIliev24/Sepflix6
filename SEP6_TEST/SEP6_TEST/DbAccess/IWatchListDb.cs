@@ -15,7 +15,7 @@ namespace SEP6_TEST.DbAccess
         public bool IsMovieInWatchlist(int id);
         public bool islikedMovieInWatchlistDB(int movieId);
 
-        public void addWatchlistMovieToList(int movieId);
+        public Task addWatchlistMovieToList(int movieId);
 
         public void deleteWatchlistMovieFromList(int movieId);
     }

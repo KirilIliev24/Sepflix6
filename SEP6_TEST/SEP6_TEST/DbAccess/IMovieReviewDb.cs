@@ -7,10 +7,10 @@ using SEP6_TEST.DTO;
 
 namespace SEP6_TEST.DbAccess
 {
-    interface IMovieReviewDb
+    public interface IMovieReviewDb
     {
         public void addReview(string username, int movieId, string reviewText);
         public Task<List<MovieReview>> getAllReviewsForMovie(int movieId);
-       
+
     }
 }
