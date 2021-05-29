@@ -23,6 +23,14 @@
 
     <br />
 
+    <div class="text-white bg-info rounded mx-auto">
+        <h5>Born in @biography.birthday at @biography.place_of_birth</h5>
+        @if (isActorDead())
+        {
+            <h5>Passed away in @biography.deathday</h5>
+        }
+    </div>
+
     @*<div class="card bg-info text-white w-25 m-auto">
         <h5 class="card-text text-center mb-2 mt-2">Average movie rating @movieRating/10</h5>
     </div>*@
@@ -86,6 +94,17 @@ else
     string personName { get; set; } = "vyn Djiesiel";
     string personDesc { get; set; } = "was once a fast boi, now iz a thic boi";
     string movieRating { get; set; } = "6.9";
+    bool isPassedAway { get; set; } = false;
+
+    bool isActorDead()
+    {
+        if (biography.deathday != null)
+        {
+            isPassedAway = true;
+            return true;
+        }
+        else return false;
+    }
 
     private bool isLoading = false;
 
