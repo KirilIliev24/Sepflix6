@@ -13,4 +13,11 @@ namespace SEP6_TEST.Enums
         [Description("Producer")] Producer = 3,
         [Description("Director")] Director = 4
     }
+
+    public enum OrderMovies
+    {
+        [Description("High To Low")] HighToLow = 1,
+        [Description("Low To High")] LowToHigh = 2,
+        [Description("None")] None = 3
+    }
 }
