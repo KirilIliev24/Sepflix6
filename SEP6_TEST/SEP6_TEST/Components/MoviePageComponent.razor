@@ -63,11 +63,12 @@
                 <div class="btn-group float-none" role="group" aria-label="First group">
                     @for (int i = 1; i <= 10; i++)
                     {
-                        <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(i))">@i</button>
+                        int voteValue = i;
+                        <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(voteValue))">@i</button>
                     }
                 </div>
             </div>
-
+            <p>@test</p>
         </div>
     </div>
 
@@ -143,6 +144,8 @@ else
 
     private string reviewText = "";
 
+    private string test = "";
+
     protected async override Task OnInitializedAsync()
     {
         isLoading = true;
@@ -188,9 +191,10 @@ else
         movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
     }
 
-    private async void RateMovie(int rate)
+    private async Task RateMovie(int rate)
     {
         movie = await movieLogic.updateVotesAndRating(movie, rate);
+        test = $"You rated the movied with {rate}";
     }
 
     private async Task SubmitReview()
