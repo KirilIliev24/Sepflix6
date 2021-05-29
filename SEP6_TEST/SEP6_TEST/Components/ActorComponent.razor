@@ -1,7 +1,7 @@
 ﻿
 @using SEP6_TEST.ApiModels
 
-<div class="card text-white bg-transparent w-25" style="width: 18rem;">
+<div class="card text-white bg-transparent border-0 mt-3" style="width: 9rem;">
     <img class="card-img-top rounded" src="@pictureUrl" alt="Actor Image">
     <div class="card-body pt-1 pl-1">
         <h5 class="card-title text-wrap">@castMember.name</h5>
@@ -20,3 +20,17 @@
         await Task.Run(() => pictureUrl = $"https://image.tmdb.org/t/p/w500/{castMember.profile_path}");
     }
 }
+
+<style>
+    #ass {
+        overflow-x: scroll;
+        white-space: nowrap;
+        max-width: 150px;
+        padding: 1rem;
+    }
+    .scrolling-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+        max-width: 72rem;
+    }
+</style>

@@ -13,17 +13,22 @@
 <h1 style="margin:auto;text-align:center;margin-bottom:10px">Movie list</h1>
 <h1 style="margin:auto;text-align:center;margin-bottom:10px">Hello @user.Username</h1>
 
-<form class="form-inline bg-info text-center rounded mt-5 mb-5 pl-2 mx-auto w-100">
-    <div class="form-group">
-        <p class="m-auto w-100 align-content-center">Search for any movie</p>
+<div class="card bg-info mb-3">
+    <div class="card-body">
+        <form class="form-inline bg-info text-center rounded mx-auto">
+            <div class="form-group">
+                <p class="m-auto w-100 align-content-center mr-2">Search for any movie</p>
+            </div>
+            <div class="form-group">
+                <label class="sr-only">Movie tite</label>
+                <input type="text" class="form-control mx-2" placeholder="Enter movie title" value="@searchString" @oninput="(e)=> searchString = e.Value.ToString()">
+            </div>
+            <button type="button" class="btn btn-primary ml-2" @onclick="GetMovieFromSearch">Search</button>
+        </form>
+        <span>@Error</span>
     </div>
-    <div class="form-group mt-2 mb-2 ml-2 mr-2">
-        <label class="sr-only">Movie tite</label>
-        <input type="text" class="form-control" placeholder="Enter movie title" value="@searchString" @oninput="(e)=> searchString = e.Value.ToString()">
-    </div>
-    <button type="button" class="btn btn-primary" @onclick="GetMovieFromSearch">Search</button>
-</form>
-<span>@Error</span>
+</div>
+
 
 @if (isLoading == false)
 {
