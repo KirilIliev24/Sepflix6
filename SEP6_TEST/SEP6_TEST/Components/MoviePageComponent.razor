@@ -1,4 +1,4 @@
-﻿@page  "/movie"
+﻿@page  "/movie/{movieId:int}"
 @using SEP6_TEST.Components;
 @using SEP6_TEST.ApiAccess
 @using SEP6_TEST.ApiModels
@@ -9,12 +9,13 @@
 @using SEP6_TEST.Models
 @inject IMovieAccessInfoApi movieFromApi
 @inject IMovieInfoDb movieFromDb
-@inject IWatchListDb watchList
-@inject ILikedMoviesDb likedList
+@*@inject IWatchListDb watchList
+@inject ILikedMoviesDb likedList*@
 @inject IUserDb currentUser
 @inject IMovieLogic movieLogic
 @inject IMovieReviewDb movieReview
 @inject ILikedMoviesLogic likedMovieLogic
+@inject IWacthlistLogic watchMovieLogic
 
 
 @if (isLoading == false)
@@ -170,8 +171,8 @@ else
         reviews = await movieReview.getAllReviewsForMovie(movieId);
         director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
 
-        movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
-        movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+        movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
+        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
 
         isLoading = false;
     }
@@ -181,28 +182,27 @@ else
         bool added = likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
         if (added)
         {
-            movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+            movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
         }
     }
 
     private void AddToWatchList()
     {
 
-        //use the watchmovielogic when implemented!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        watchList.addMovieToWatchlist(currentUser.user.Username, movieId);
-        //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
+        watchMovieLogic.addMovieToWatchlist(currentUser.user.Username, movieId);
+        movieInWatchlist = likedMovieLogic.isMovieInLikedDB(movieId);
     }
 
     private void RemoveFromLiked()
     {
-        likedList.deleteALikedMovie(currentUser.user.Username, movieId);
-        //movieInLikedList = likedList.IsMovieInLikedlist(movieId);
+        likedMovieLogic.deleteMoviesFromLiked(currentUser.user.Username, movieId);
+        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
     }
 
     private void RemoveFromWatchList()
     {
-        watchList.removeMovieFromWatchList(currentUser.user.Username, movieId);
-        //movieInWatchlist = watchList.IsMovieInWatchlist(movieId);
+        watchMovieLogic.removeMovieFromWatchlist(currentUser.user.Username, movieId);
+        movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
     }
 
     private async void RateMovie(int rate)
