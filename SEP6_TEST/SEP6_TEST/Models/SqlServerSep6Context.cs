@@ -28,7 +28,6 @@ namespace SEP6_TEST.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-
                 optionsBuilder.UseSqlServer("Data Source=35.240.12.17;Initial Catalog=SqlServerSep6;User ID=sqlserver;Password=kiril2403;");
             }
         }
@@ -39,10 +38,8 @@ namespace SEP6_TEST.Models
 
             modelBuilder.Entity<LikedMovie>(entity =>
             {
-                entity.HasKey(e => e.LikedId)
-                    .HasName("PK__likedMov__CAA59091B5BFED9B");
-
-                entity.Property(e => e.LikedId).ValueGeneratedNever();
+                entity.HasKey(e => e.LikedMoviesId)
+                    .HasName("PK__likedMov__4A6AC53F947648D5");
 
                 entity.Property(e => e.Username).IsUnicode(false);
 
@@ -50,13 +47,13 @@ namespace SEP6_TEST.Models
                     .WithMany(p => p.LikedMovies)
                     .HasForeignKey(d => d.MovieId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__likedMovi__movie__2DE6D218");
+                    .HasConstraintName("FK__likedMovi__movie__57DD0BE4");
 
                 entity.HasOne(d => d.UsernameNavigation)
                     .WithMany(p => p.LikedMovies)
                     .HasForeignKey(d => d.Username)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__likedMovi__usern__2CF2ADDF");
+                    .HasConstraintName("FK__likedMovi__usern__56E8E7AB");
             });
 
             modelBuilder.Entity<Movie>(entity =>
@@ -67,9 +64,7 @@ namespace SEP6_TEST.Models
             modelBuilder.Entity<MovieReview>(entity =>
             {
                 entity.HasKey(e => e.ReviewId)
-                    .HasName("PK__movieRev__60883D901AF4A952");
-
-                entity.Property(e => e.ReviewId).ValueGeneratedNever();
+                    .HasName("PK__movieRev__60883D90DC7491D2");
 
                 entity.Property(e => e.ReviewText).IsUnicode(false);
 
@@ -79,13 +74,13 @@ namespace SEP6_TEST.Models
                     .WithMany(p => p.MovieReviews)
                     .HasForeignKey(d => d.MovieId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__movieRevi__movie__31B762FC");
+                    .HasConstraintName("FK__movieRevi__movie__5BAD9CC8");
 
                 entity.HasOne(d => d.UsernameNavigation)
                     .WithMany(p => p.MovieReviews)
                     .HasForeignKey(d => d.Username)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__movieRevi__usern__30C33EC3");
+                    .HasConstraintName("FK__movieRevi__usern__5AB9788F");
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -100,21 +95,19 @@ namespace SEP6_TEST.Models
 
             modelBuilder.Entity<Watchlist>(entity =>
             {
-                entity.Property(e => e.WatchlistId).ValueGeneratedNever();
-
                 entity.Property(e => e.Username).IsUnicode(false);
 
                 entity.HasOne(d => d.Movie)
                     .WithMany(p => p.Watchlists)
                     .HasForeignKey(d => d.MovieId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__watchlist__movie__2B0A656D");
+                    .HasConstraintName("FK__watchlist__movie__503BEA1C");
 
                 entity.HasOne(d => d.UsernameNavigation)
                     .WithMany(p => p.Watchlists)
                     .HasForeignKey(d => d.Username)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__watchlist__usern__2A164134");
+                    .HasConstraintName("FK__watchlist__usern__4F47C5E3");
             });
 
             OnModelCreatingPartial(modelBuilder);
