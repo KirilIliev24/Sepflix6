@@ -39,16 +39,21 @@ namespace SEP6_TEST.Models
 
             modelBuilder.Entity<LikedMovie>(entity =>
             {
+                entity.HasKey(e => e.LikedId)
+                    .HasName("PK__likedMov__CAA59091B5BFED9B");
+
+                entity.Property(e => e.LikedId).ValueGeneratedNever();
+
                 entity.Property(e => e.Username).IsUnicode(false);
 
                 entity.HasOne(d => d.Movie)
-                    .WithMany()
+                    .WithMany(p => p.LikedMovies)
                     .HasForeignKey(d => d.MovieId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__likedMovi__movie__2DE6D218");
 
                 entity.HasOne(d => d.UsernameNavigation)
-                    .WithMany()
+                    .WithMany(p => p.LikedMovies)
                     .HasForeignKey(d => d.Username)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__likedMovi__usern__2CF2ADDF");
@@ -95,16 +100,18 @@ namespace SEP6_TEST.Models
 
             modelBuilder.Entity<Watchlist>(entity =>
             {
+                entity.Property(e => e.WatchlistId).ValueGeneratedNever();
+
                 entity.Property(e => e.Username).IsUnicode(false);
 
                 entity.HasOne(d => d.Movie)
-                    .WithMany()
+                    .WithMany(p => p.Watchlists)
                     .HasForeignKey(d => d.MovieId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__watchlist__movie__2B0A656D");
 
                 entity.HasOne(d => d.UsernameNavigation)
-                    .WithMany()
+                    .WithMany(p => p.Watchlists)
                     .HasForeignKey(d => d.Username)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__watchlist__usern__2A164134");

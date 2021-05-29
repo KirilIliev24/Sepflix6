@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SEP6_TEST.Models
 {
-    [Keyless]
     [Table("watchlist")]
     public partial class Watchlist
     {
@@ -18,10 +17,15 @@ namespace SEP6_TEST.Models
         public string Username { get; set; }
         [Column("movie_id")]
         public int MovieId { get; set; }
+        [Key]
+        [Column("Watchlist_Id")]
+        public int WatchlistId { get; set; }
 
         [ForeignKey(nameof(MovieId))]
+        [InverseProperty("Watchlists")]
         public virtual Movie Movie { get; set; }
         [ForeignKey(nameof(Username))]
+        [InverseProperty(nameof(User.Watchlists))]
         public virtual User UsernameNavigation { get; set; }
     }
 }

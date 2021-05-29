@@ -13,7 +13,9 @@ namespace SEP6_TEST.Models
     {
         public Movie()
         {
+            LikedMovies = new HashSet<LikedMovie>();
             MovieReviews = new HashSet<MovieReview>();
+            Watchlists = new HashSet<Watchlist>();
         }
 
         [Key]
@@ -27,7 +29,11 @@ namespace SEP6_TEST.Models
         [Column("poster")]
         public string Poster { get; set; }
 
+        [InverseProperty(nameof(LikedMovie.Movie))]
+        public virtual ICollection<LikedMovie> LikedMovies { get; set; }
         [InverseProperty(nameof(MovieReview.Movie))]
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
+        [InverseProperty(nameof(Watchlist.Movie))]
+        public virtual ICollection<Watchlist> Watchlists { get; set; }
     }
 }

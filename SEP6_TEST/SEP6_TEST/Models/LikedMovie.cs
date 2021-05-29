@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SEP6_TEST.Models
 {
-    [Keyless]
     [Table("likedMovies")]
     public partial class LikedMovie
     {
@@ -18,10 +17,15 @@ namespace SEP6_TEST.Models
         public string Username { get; set; }
         [Column("movie_id")]
         public int MovieId { get; set; }
+        [Key]
+        [Column("Liked_Id")]
+        public int LikedId { get; set; }
 
         [ForeignKey(nameof(MovieId))]
+        [InverseProperty("LikedMovies")]
         public virtual Movie Movie { get; set; }
         [ForeignKey(nameof(Username))]
+        [InverseProperty(nameof(User.LikedMovies))]
         public virtual User UsernameNavigation { get; set; }
     }
 }
