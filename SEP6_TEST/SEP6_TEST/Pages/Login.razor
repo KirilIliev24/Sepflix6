@@ -4,7 +4,6 @@
 @inject NavigationManager NavigationManager
 
 
-<h1>Test text</h1>
 <form>
     <p>@error</p>
     <div class="form-group">
@@ -16,11 +15,6 @@
         <label for="InputPassword">Password</label>
         <input type="password" class="form-control" id="InputPassword" placeholder="Password" @bind=Password>
     </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="Check">
-        <label class="form-check-label" for="Check">Remember login info</label>
-    </div>
-    
 </form>
 <button class="btn btn-primary" @onclick=AttempLogin>Login</button>
 
