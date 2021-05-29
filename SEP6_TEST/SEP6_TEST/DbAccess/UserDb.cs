@@ -18,6 +18,7 @@ namespace SEP6_TEST.DbAccess
                     bool exists = context.Users.Any(u => u.Username == user.Username);
                     if (exists == false)
                     {
+                        this.user = user;
                         context.Users.Add(user);
                         context.SaveChanges();
                         return true;
