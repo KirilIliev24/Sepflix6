@@ -5,28 +5,14 @@
 
 
 <div class="container p-5">
+
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Hello, welcome to SepFlix!</h1>
+            <h1 class="text-center">Welcome to SepFlix!</h1>
             <br />
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-1 text-nowrap mt-2 ml-2">
-            <p>Switch to: </p>
-        </div>
-        <div class="col-2">
-            @if (wantToLogin == false)
-            {
 
-                <button class="btn btn-primary" @onclick="SwitchForm">Register</button>
-            }
-            else
-            {
-                <button class="btn btn-primary" @onclick="SwitchForm">Login</button>
-            }
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12" hidden="@HideLogin">
             <Login>
@@ -38,6 +24,29 @@
 
             </Register>
         </div>
+    </div>
+
+
+    <div class="row mt-5">
+        <div class="card bg-info w-25 mx-auto mb-t">
+            <div class="card-body">
+                <div class="text-nowrap">
+                    <p class="text-center">Switch to</p>
+                </div>
+                <div class="text-center align-items-center">
+                    @if (wantToLogin == false)
+                    {
+
+                        <button class="btn btn-primary" @onclick="SwitchForm">Register</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-primary" @onclick="SwitchForm">Login</button>
+                    }
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

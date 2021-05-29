@@ -25,7 +25,7 @@
     <h6 style="text-align:center">Directed by @director.name</h6>
 
     <br />
-    <img style="margin-left:auto;margin-right:auto;display: block;" src="@movie.Movie.Poster" alt="MovieImage" />
+    <img style="margin-left:auto;margin-right:auto;display:block;border-radius:10px" src="@movie.Movie.Poster" alt="MovieImage" />
     <br />
 
     <div class="card mx-auto bg-info">
@@ -55,23 +55,22 @@
 
     <br />
 
-    <div class="card bg-info text-white align-items-center">
-        <h5 class="card-header text-center">Rated @movie.Rating.Rating1 by viewers</h5>
+    <div class="card bg-info text-white text-center">
+        <h5 class="card-header text-center">Rated @Math.Round(@movie.Rating.Rating1, 2) by viewers</h5>
         <div class="card-body">
             <h5 class="card-title text-center">@movie.Rating.Votes ratings in total</h5>
-
-            <div class="card-footer">
-                <p class="card-text text-center">Your Rating</p>
-                <div class="btn-group float-none" role="group" aria-label="First group">
-                    @for (int i = 1; i <= 10; i++)
-                    {
-                        int voteValue = i;
-                        <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(voteValue))">@i</button>
-                    }
-                </div>
-            </div>
-            <p>@test</p>
         </div>
+        <div class="card-footer w-100 mx-auto">
+            <p class="card-text text-center">Your Rating</p>
+            <div class="btn-group float-none" role="group" aria-label="First group">
+                @for (int i = 1; i <= 10; i++)
+                {
+                    int voteValue = i;
+                    <button type="button" class="btn btn-secondary border-info" @onclick="@(a => RateMovie(voteValue))">@i</button>
+                }
+            </div>
+        </div>
+        <p>@test</p>
     </div>
 
     <br />
