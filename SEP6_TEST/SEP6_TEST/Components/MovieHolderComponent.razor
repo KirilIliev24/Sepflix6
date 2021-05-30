@@ -14,9 +14,16 @@
     {
         <img class="card-img-top border-info rounded" src="/Images/image.png" alt="Movie Image" width="617" height="625">
     }
-    <div class="card-body">
-        <h5 class="card-title text-center font-weight-bold border-info">@movie.Movie.Title</h5>
-    </div>
+<div class="card-body mt-2">
+    @if (movie.Movie.Title.Length > 33)
+    {
+        <h6 class="text-center font-weight-bold border-info">@movie.Movie.Title</h6>
+    }
+    else
+    {
+        <h5 class="text-center font-weight-bold border-info">@movie.Movie.Title</h5>
+    }
+</div>
     <div class="card-footer bg-info border-info">
         <h6>Year: @movie.Movie.Year</h6>
         <h6>Rating: @movie.Rating.Rating1/10 out of @movie.Rating.Votes ratings</h6>
@@ -27,3 +34,9 @@
 @code {
     [Parameter] public MovieDTO movie { get; set; }
 }
+
+<style>
+    .mt-2{
+        font-size:0.8rem;
+    }
+</style>
