@@ -27,14 +27,17 @@
                 <input type="text" class="form-control mx-2" placeholder="Enter movie title" value="@searchString" @oninput="(e)=> searchString = e.Value.ToString()">
             </div>
             <button type="button" class="btn btn-primary ml-2" @onclick="GetMovieFromSearch">Search</button>
+
+            <select @onchange="ReorderMovies" class="form-control1 ml-3" name="Movie Sorting" selected="HighToLow">
+                <option disabled selected> -- select an option -- </option>
+
+                @foreach (var order in Enum.GetValues(typeof(OrderMovies)))
+                {
+                    <option value="@order">@order</option>
+                }
+            </select>
+            <span>@Error</span>
         </form>
-        <select @onchange="ReorderMovies" class="form-control1">
-            @foreach (var order in Enum.GetValues(typeof(OrderMovies)))
-            {
-                <option value="@order">@order</option>
-            }
-        </select>
-        <span>@Error</span>
     </div>
 </div>
 

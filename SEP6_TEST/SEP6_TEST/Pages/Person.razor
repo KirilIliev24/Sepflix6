@@ -18,17 +18,20 @@
 
     <div class="card bg-info text-white">
         <h5 class="card-header text-center ">Description</h5>
-        <h5 class="card-text text-center mb-2 mt-2">@biography.biography</h5>
+        <h5 class="card-body text-center mb-2 mt-2">@biography.biography</h5>
     </div>
 
     <br />
 
-    <div class="text-white bg-info rounded mx-auto">
-        <h5>Born in @biography.birthday at @biography.place_of_birth</h5>
-        @if (isActorDead())
-        {
-            <h5>Passed away in @biography.deathday</h5>
-        }
+    <div class="card text-white bg-info rounded mx-auto text-center">
+        <div class="card-body">
+            <h5>Born in @biography.birthday at @biography.place_of_birth</h5>
+            @if (isActorDead())
+            {
+                <h5>Passed away in @biography.deathday</h5>
+            }
+        </div>
+        
     </div>
 
     @*<div class="card bg-info text-white w-25 m-auto">
@@ -43,7 +46,7 @@ else
 
 <br />
 
-@*maybe we will do it, just maybe*@
+@*maybe we will do it, just maybe or mayrtrwt*@
 
 <!--<h1 style="text-align:center">Known from the following movies</h1>
 
@@ -100,7 +103,7 @@ else
 
     bool isActorDead()
     {
-        if (biography.deathday != null)
+        if (biography.deathday == null)
         {
             isPassedAway = true;
             return true;
