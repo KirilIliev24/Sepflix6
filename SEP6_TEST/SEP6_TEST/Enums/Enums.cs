@@ -16,8 +16,8 @@ namespace SEP6_TEST.Enums
 
     public enum OrderMovies
     {
-        [Description("High To Low")] HighToLow = 1,
-        [Description("Low To High")] LowToHigh = 2,
-        [Description("None")] None = 3
+        [Description("None")] None = 1,
+        [Description("High To Low")] HighToLow = 2,
+        [Description("Low To High")] LowToHigh = 3
     }
 }

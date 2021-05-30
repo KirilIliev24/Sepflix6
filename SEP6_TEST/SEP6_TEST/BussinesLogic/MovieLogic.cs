@@ -69,7 +69,7 @@ namespace SEP6_TEST.BussinesLogic
             }
             else
             {
-                return movieDTOs;
+                return await MovieInfoDb.GetAllMovies();
             }
         }
     }

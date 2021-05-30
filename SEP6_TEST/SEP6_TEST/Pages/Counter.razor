@@ -4,10 +4,12 @@
 @using SEP6_TEST.DbAccess;
 @using SEP6_TEST.ApiAccess
 @using SEP6_TEST.Models
+@using SEP6_TEST.BussinesLogic
 
 @inject IMovieInfoDb movieFromDb
 @inject IMovieAccessInfoApi movieFromApi
 @inject IUserDb currentUser
+@inject IMovieLogic movieLogic
 @inject NavigationManager NavigationManager
 
 <h1 style="margin:auto;text-align:center;margin-bottom:10px">Movie list</h1>
@@ -25,6 +27,12 @@
             </div>
             <button type="button" class="btn btn-primary ml-2" @onclick="GetMovieFromSearch">Search</button>
         </form>
+        <select @onchange="ReorderMovies" class="form-control1">
+            @foreach (var order in Enum.GetValues(typeof(OrderMovies)))
+            {
+                <option value="@order">@order</option>
+            }
+        </select>
         <span>@Error</span>
     </div>
 </div>
@@ -34,8 +42,6 @@
 {
     <div style="justify-content:center">
         <div class="card-columns float-none mx-auto w-100">
-
-
             @foreach (var movie in MovieDTOs)
             {
                 <div @onclick="@(e => GetMovieDetails(movie.Movie.Id))">
@@ -85,6 +91,13 @@ else
             MovieDTOs = await movieFromDb.GetAllMovies();
             isLoading = false;
         }
+    }
+
+
+    private async Task ReorderMovies(ChangeEventArgs e)
+    {
+        OrderMovies order = (OrderMovies)Enum.Parse(typeof(OrderMovies), e.Value.ToString());
+        MovieDTOs = await movieLogic.ReorderMoviesByRating(order, MovieDTOs);
     }
 
     public void GetMovieDetails(int movieId)
