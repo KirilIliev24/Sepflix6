@@ -59,12 +59,12 @@ namespace SEP6_TEST.BussinesLogic
         {
             if (orderMovies == OrderMovies.HighToLow)
             {
-                var orderedMovies = await Task.Run(() => movieDTOs.OrderBy(m => m.Rating.Rating1).ToList());
+                var orderedMovies = await Task.Run(() => movieDTOs.OrderByDescending(m => m.Rating.Rating1).ToList());
                 return orderedMovies;
             }
             else if (orderMovies == OrderMovies.LowToHigh)
             {
-                var orderedMovies = await Task.Run(() => movieDTOs.OrderByDescending(m => m.Rating.Rating1).ToList());
+                var orderedMovies = await Task.Run(() => movieDTOs.OrderBy(m => m.Rating.Rating1).ToList());
                 return orderedMovies;
             }
             else
