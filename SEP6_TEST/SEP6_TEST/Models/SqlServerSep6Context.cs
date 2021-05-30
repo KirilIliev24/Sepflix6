@@ -22,6 +22,7 @@ namespace SEP6_TEST.Models
         public virtual DbSet<MovieReview> MovieReviews { get; set; }
         public virtual DbSet<Rating> Ratings { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserRating> UserRatings { get; set; }
         public virtual DbSet<Watchlist> Watchlists { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -91,6 +92,23 @@ namespace SEP6_TEST.Models
                 entity.Property(e => e.Username).IsUnicode(false);
 
                 entity.Property(e => e.Password).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<UserRating>(entity =>
+            {
+                entity.Property(e => e.Username).IsUnicode(false);
+
+                entity.HasOne(d => d.Movie)
+                    .WithMany(p => p.UserRatings)
+                    .HasForeignKey(d => d.MovieId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__userRatin__movie__634EBE90");
+
+                entity.HasOne(d => d.UsernameNavigation)
+                    .WithMany(p => p.UserRatings)
+                    .HasForeignKey(d => d.Username)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__userRatin__usern__625A9A57");
             });
 
             modelBuilder.Entity<Watchlist>(entity =>
