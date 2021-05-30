@@ -16,7 +16,7 @@
                 <input type="password" class="form-control" id="InputPassword" placeholder="Password" @bind=Password>
             </div>
         </form>
-        <button class="btn btn-primary" @onclick=AttempLogin>Login</button>
+        <button class="btn btn-primary" @onclick=AttempLogin disabled = "@disableButtonBool">Login</button>
         <span id="errorMessage">@error</span>
     </div>
 </div>
@@ -28,15 +28,18 @@
     private string Password;
     private bool isValid;
     private string error;
+    private bool disableButtonBool = false;
 
     private void AttempLogin()
     {
-        //NavigationManager.NavigateTo("/movie", true);
+        disableButtonBool = true;
+
         if(!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
         {
             isValid = user.getUserByName(Email);
             if(isValid)
             {
+                disableButtonBool = true;
                 //navigate to all movies (couter will be transformed to view all movies)
                 error = "Valid credential, please wait...";
                 NavigationManager.NavigateTo("/counter", true);
@@ -44,11 +47,13 @@
             else
             {
                 error = "Invalid credentials";
+                disableButtonBool = false;
             }
         }
         else
         {
             error = "There are one or more empty fields";
+            disableButtonBool = false;
         }
     }
 }

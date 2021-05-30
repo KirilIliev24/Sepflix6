@@ -22,7 +22,7 @@
             </div>
         </form>
         <p>@error</p>
-        <button type="button" class="btn btn-primary" @onclick="AttempRegister">Register</button>
+        <button type="button" class="btn btn-primary" @onclick="AttempRegister" disabled="@disableButtonBool">Register</button>
     </div>
 </div>
 
@@ -33,9 +33,11 @@
     private string RepeatedPassword;
     private bool isValid;
     private string error;
+    private bool disableButtonBool = false;
 
     private void AttempRegister()
     {
+        disableButtonBool = true;
         error = "";
 
         if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password) && !string.IsNullOrWhiteSpace(RepeatedPassword))
@@ -51,17 +53,20 @@
                 isValid = user.createUser(newUser);
                 if (isValid)
                 {
+                    disableButtonBool = false;
                     error = "No error";
                     //navigate to all movies (couter will be transformed to view all movies)
                     NavigationManager.NavigateTo("/counter", true);
                 }
                 else
                 {
+                    disableButtonBool = false;
                     error = "Username is taken";
                 }
             }
             else
             {
+                disableButtonBool = false;
                 error = "Paswords do not match";
             }
 

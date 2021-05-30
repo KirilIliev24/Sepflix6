@@ -4,8 +4,11 @@
 @using SEP6_TEST.DbAccess;
 @using SEP6_TEST.ApiAccess
 @using SEP6_TEST.Models
+@using SEP6_TEST.BussinesLogic
 
 @inject IMovieInfoDb movieFromDb
+@inject IWacthlistLogic watchMovieLogic
+@inject IMovieLogic movieLogic
 @inject IMovieAccessInfoApi movieFromApi
 @inject IUserDb currentUser
 @inject NavigationManager NavigationManager
@@ -25,6 +28,12 @@
             </div>
             <button type="button" class="btn btn-primary ml-2" @onclick="GetMovieFromSearch">Search</button>
         </form>
+        <select @onchange="ReorderMovies" class="form-control1">
+            @foreach (var order in Enum.GetValues(typeof(OrderMovies)))
+            {
+                <option value="@order">@order</option>
+            }
+        </select>
         <span>@Error</span>
     </div>
 </div>
@@ -32,13 +41,11 @@
 
 @if (isLoading == false)
 {
-    <div style="justify-content:center">
-        <div class="card-columns float-none mx-auto w-100">
-
-
+    <div class="container-fluid" style="justify-content:center">
+        <div class="row">
             @foreach (var movie in MovieDTOs)
             {
-                <div @onclick="@(e => GetMovieDetails(movie.Movie.Id))">
+                <div class="col-xl-3" style="margin-bottom:10px" @onclick="@(e => GetMovieDetails(movie.Movie.Id))">
                     <MovieHolderComponent movie="movie">
 
                     </MovieHolderComponent>
@@ -64,7 +71,7 @@ else
     {
         isLoading = true;
         user = currentUser.user;
-        MovieDTOs = await movieFromDb.GetAllMovies();
+        MovieDTOs = await watchMovieLogic.getAllMoviesInWatchlist(user.Username);
 
         isLoading = false;
     }
@@ -74,7 +81,7 @@ else
         if (!string.IsNullOrWhiteSpace(searchString))
         {
 
-            MovieDTOs = await movieFromDb.GetSearchResults(searchString);
+            MovieDTOs = await movieFromDb.GetSearchResults(searchString, MovieDTOs);
             if (MovieDTOs.Count == 0)
             {
                 Error = "No movies found";
@@ -82,8 +89,18 @@ else
         }
         else
         {
-            MovieDTOs = await movieFromDb.GetAllMovies();
+            MovieDTOs = await watchMovieLogic.getAllMoviesInWatchlist(user.Username);
             isLoading = false;
+        }
+    }
+
+    private async Task ReorderMovies(ChangeEventArgs e)
+    {
+        OrderMovies order = (OrderMovies)Enum.Parse(typeof(OrderMovies), e.Value.ToString());
+        MovieDTOs = await movieLogic.ReorderMoviesByRating(order, MovieDTOs);
+        if (MovieDTOs.Count == 0)
+        {
+            MovieDTOs = await watchMovieLogic.getAllMoviesInWatchlist(user.Username);
         }
     }
 

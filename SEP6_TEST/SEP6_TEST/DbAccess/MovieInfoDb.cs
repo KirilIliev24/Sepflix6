@@ -138,14 +138,14 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
-        public async Task<List<MovieDTO>> GetSearchResults(string searchPhrase)
+        public async Task<List<MovieDTO>> GetSearchResults(string searchPhrase, List<MovieDTO> movies)
         {
             List<MovieDTO> result = new List<MovieDTO>();
             if(!string.IsNullOrWhiteSpace(searchPhrase))
             {
                 await Task.Run(() =>
                 {
-                    foreach (var m in MovieDTOs)
+                    foreach (var m in movies)
                     {
                         string movieTitle = m.Movie.Title.ToLowerInvariant();
                         string phrase = searchPhrase.ToLowerInvariant();
