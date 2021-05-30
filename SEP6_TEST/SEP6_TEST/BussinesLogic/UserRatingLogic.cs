@@ -18,14 +18,14 @@ namespace SEP6_TEST.BussinesLogic
         {
             var exists = UserRatingDb.hasUserVoted(username, movieId);
 
-            if (!exists)
+            if (exists == false)
             {
                 UserRatingDb.saveUserRating(username, movieId, ratingGiven);
-                return exists;
+                return true;
             }
             else
             {
-                return exists;
+                return true;
             }
         }
 

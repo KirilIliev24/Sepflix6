@@ -41,6 +41,8 @@ namespace SEP6_TEST
             services.AddScoped<ILikedMoviesLogic, LikedMovieLogic>();
             services.AddScoped<IWacthlistLogic, WatchlistLogic>();
             services.AddScoped<IMovieReviewLogic, MovieReviewLogic>();
+            services.AddScoped<IUserRatingDb, UserRatingDb>();
+            services.AddScoped<IUserRatingLogic, UserRatingLogic>();
             services.AddHttpClient();
         }
 
