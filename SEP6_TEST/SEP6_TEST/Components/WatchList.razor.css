@@ -1,0 +1,8 @@
+﻿body {
+    background-color: #3a0647;
+    color:black;
+}
+
+.card bg-info text-white mr-2 {
+    margin-top:10px;
+}
