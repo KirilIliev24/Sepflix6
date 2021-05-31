@@ -37,7 +37,7 @@ namespace SEP6_TEST.DbAccess
 
         //maybe this should return bool
         //true if there is such user, false if there is not
-        public bool getUserByName(string username)
+        public bool getUserByName(string username, string password)
         {
             //add a password check
             using (var context = new SqlServerSep6Context())
@@ -45,7 +45,7 @@ namespace SEP6_TEST.DbAccess
                 try
                 {
                     var user = context.Users.Find(username);
-                    if (user != null)
+                    if (user != null && user.Password.Equals(password))
                     {
                         this.user = user;
                         return true;

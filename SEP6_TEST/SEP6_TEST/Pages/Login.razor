@@ -36,7 +36,7 @@
 
         if(!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
         {
-            isValid = user.getUserByName(Email);
+            isValid = user.getUserByName(Email, Password);
             if(isValid)
             {
                 disableButtonBool = true;

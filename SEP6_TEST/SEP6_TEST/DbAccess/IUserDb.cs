@@ -10,7 +10,7 @@ namespace SEP6_TEST.DbAccess
     {
         public User user { get; }
         public bool createUser(User user);
-        public bool getUserByName(string username);
+        public bool getUserByName(string username, string password);
         public void logoutUser();
     }
 }
