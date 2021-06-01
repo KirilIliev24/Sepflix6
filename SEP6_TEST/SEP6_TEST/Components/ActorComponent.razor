@@ -2,7 +2,16 @@
 @using SEP6_TEST.ApiModels
 
 <div class="card text-white bg-transparent border-0 mt-3" style="width: 9rem;">
-    <img class="card-img-top rounded" src="@pictureUrl" alt="Actor Image">
+
+    @if (!pictureUrl.Equals("https://image.tmdb.org/t/p/w500/"))
+    {
+        <img class="card-img-top rounded" src="@pictureUrl" alt="@pictureUrl">
+    }
+    else
+    {
+        <img class="card-img-top rounded w-auto h-auto" src="/Images/image.png" alt="Movie Image">
+    }
+
     <div class="card-body pt-1 pl-1">
         <h5 class="card-title text-wrap">@castMember.name</h5>
         <h6 class="text-muted text-wrap">@castMember.character</h6>

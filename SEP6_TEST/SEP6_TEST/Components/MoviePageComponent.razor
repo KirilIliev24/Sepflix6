@@ -20,44 +20,89 @@
 @if (isLoading == false)
 {
     <h1 style="text-align:center">@movie.Movie.Title</h1>
-    <h6 style="text-align:center">Directed by @director.name</h6>
+
+    @if (!string.IsNullOrEmpty(director.name))
+    {
+        <h6 style="text-align:center">Directed by @director.name</h6>
+    }
 
     <br />
-    <img style="margin-left:auto;margin-right:auto;display:block;border-radius:10px" src="@movie.Movie.Poster" alt="MovieImage" />
+
+    @if (!movie.Movie.Poster.Equals("https://image.tmdb.org/t/p/w500/"))
+    {
+        if (movie.Movie.Poster.Equals(""))
+        {
+            <img style="margin-left:auto;margin-right:auto;display: block;border-radius:10px" src="/Images/image.png" alt="MovieImagenotgot" />
+        }
+        else
+        {
+            <img style="margin-left:auto;margin-right:auto;display: block;border-radius:10px" src="@movie.Movie.Poster" alt="MovieImagegot" />
+        }
+    }
+    else
+    {
+        <img style="margin-left:auto;margin-right:auto;display: block;border-radius:10px" src="/Images/image.png" alt="MovieImagenotgot" />
+    }
+
     <br />
 
-    <div class="card mx-auto bg-info">
-        <div class="card-header text-center">Actors</div>
-        <div class="card-body">
-            <div class="scrolling-wrapper row flex-row flex-nowrap mx-auto bg-info rounded">
 
-                <div class="col-2" @onclick="@(a => SeePersonBio(director.id))">
-                    <div class="card text-white bg-transparent border-0 mt-3" style="width: 9rem;">
-                        <img class="card-img-top rounded" src="@directorsUrl" alt="Direcors Image">
-                        <div class="card-body pt-1 pl-1">
-                            <h5 class="card-title text-wrap">@director.name</h5>
-                            <h6 class="text-muted text-wrap">@director.job</h6>
+
+    @if (directorsUrl.Equals("https://image.tmdb.org/t/p/w500/") && movieBaseInfo.cast.Count() == 0)
+    {
+
+    }
+    else
+    {
+
+        <div class="card mx-auto bg-info">
+            <div class="card-header text-center">Actors</div>
+            <div class="card-body">
+                <div class="scrolling-wrapper row flex-row flex-nowrap mx-auto bg-info rounded">
+
+                    <div class="col-2" @onclick="@(a => SeePersonBio(director.id))">
+                        <div class="card text-white bg-transparent border-0 mt-3" style="width: 9rem;">
+
+                            @if (!directorsUrl.Equals("https://image.tmdb.org/t/p/w500/"))
+                            {
+                                <img class="card-img-top rounded" src="@directorsUrl" alt="Direcors Image">
+                            }
+                            else
+                            {
+                                <img class="card-img-top rounded w-auto h-auto" src="/Images/image.png" alt="Direcors Image">
+                            }
+
+                            <div class="card-body pt-1 pl-1">
+                                <h5 class="card-title text-wrap">@director.name</h5>
+                                <h6 class="text-muted text-wrap">@director.job</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
-                @foreach (var actor in movieBaseInfo.cast)
-                {
-                    <div class="col-2" @onclick="@(a => SeePersonBio(actor.id))">
-                        <ActorComponent castMember="actor" />
-                    </div>
-                }
+                    @foreach (var actor in movieBaseInfo.cast)
+                    {
+                        <div class="col-2" @onclick="@(a => SeePersonBio(actor.id))">
+                            <ActorComponent castMember="actor" />
+                        </div>
+                    }
 
+                </div>
             </div>
+
         </div>
-        
-    </div>
+    }
+
+
 
     <br />
 
-    <div class="card bg-info text-white mb-3">
-        <h5 class="card-header text-center">Description</h5>
-        <h5 class="card-text text-center mb-2 mt-2">@movieBaseInfo.overview</h5>
-    </div>
+    @if (!string.IsNullOrEmpty(movieBaseInfo.overview))
+    {
+        <div class="card bg-info text-white mb-3">
+            <h5 class="card-header text-center">Description</h5>
+
+            <h5 class="card-body">@movieBaseInfo.overview</h5>
+        </div>
+    }
 
     <br />
 
@@ -189,14 +234,14 @@ else
         movieBaseInfo = movieFromApi.movieBaseInfo;
         reviews = await movieReviewLogic.getAllMovieReviews(movieId);
         director = movieBaseInfo.crew.FirstOrDefault(i => i.job.Equals(CrewJobs.Director.ToString()));
-        if(director == null)
+        if (director == null)
         {
             director = new CrewMember();
         }
         directorsUrl = $"https://image.tmdb.org/t/p/w500/{director.profile_path}";
 
         userRatingVote = userRating.getUserRating(currentUser.user.Username, movieId);
-        if(userRatingVote != 0)
+        if (userRatingVote != 0)
         {
             hasUserVoted = true;
         }

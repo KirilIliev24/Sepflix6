@@ -14,7 +14,7 @@
 @inject NavigationManager NavigationManager
 
 <h1 style="margin:auto;text-align:center;margin-bottom:10px">Movie list</h1>
-<h1 style="margin:auto;text-align:center;margin-bottom:10px">Hello @user.Username</h1>
+<h1 style="margin:auto;text-align:center;margin-bottom:10px">Hello @user.Username.Substring(0, user.Username.IndexOf('@'))</h1>
 
 <div class="card bg-info mb-3">
     <div class="card-body">

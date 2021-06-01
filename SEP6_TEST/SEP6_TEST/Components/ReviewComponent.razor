@@ -2,10 +2,12 @@
 
 <div class="card text-white bg-info overflow-auto" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title pt-2">Review by @Review.Username</h5>
+
         
+        <h5 class="card-title pt-2">Review by @Review.Username.Substring(0, Review.Username.IndexOf('@'))</h5>
+
         <p class="card-text">@Review.ReviewText</p>
-        
+
     </div>
 </div>
 
