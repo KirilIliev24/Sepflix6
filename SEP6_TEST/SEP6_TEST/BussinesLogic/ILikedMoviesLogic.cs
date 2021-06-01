@@ -14,6 +14,6 @@ namespace SEP6_TEST.BussinesLogic
 
         public Task<List<MovieDTO>> getAllLikedMovies(string username);
 
-        public bool isMovieInLikedDB(int movieId);
+        public bool isMovieInLikedDB(int movieId, string username);
     }
 }

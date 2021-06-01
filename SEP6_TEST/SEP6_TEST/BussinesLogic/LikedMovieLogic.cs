@@ -20,7 +20,7 @@ namespace SEP6_TEST.BussinesLogic
         public bool addMoviesToLiked(string username, int movieId)
         {
             
-            var exists = LikedMoviesDb.islikedMovieInLikedDB(movieId);
+            var exists = LikedMoviesDb.islikedMovieInLikedDB(movieId, username);
 
             if (!exists)
             {
@@ -37,7 +37,7 @@ namespace SEP6_TEST.BussinesLogic
         public bool deleteMoviesFromLiked(string username, int movieId)
         {
             LikedMoviesDb.deleteALikedMovie(username,movieId);
-            var exists = LikedMoviesDb.islikedMovieInLikedDB(movieId);
+            var exists = LikedMoviesDb.islikedMovieInLikedDB(movieId, username);
 
             if (!exists)
             {
@@ -65,9 +65,9 @@ namespace SEP6_TEST.BussinesLogic
             return await LikedMoviesDb.getAllLikedMovies(username);
         }
 
-        public bool isMovieInLikedDB(int movieId)
+        public bool isMovieInLikedDB(int movieId, string username)
         {
-            var isInDb = LikedMoviesDb.islikedMovieInLikedDB(movieId);
+            var isInDb = LikedMoviesDb.islikedMovieInLikedDB(movieId, username);
             return isInDb;
         }
     }

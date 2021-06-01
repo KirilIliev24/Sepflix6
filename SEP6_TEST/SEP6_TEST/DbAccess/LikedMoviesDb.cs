@@ -27,11 +27,11 @@ namespace SEP6_TEST.DbAccess
             }
         }
 
-        public bool islikedMovieInLikedDB(int movieId)
+        public bool islikedMovieInLikedDB(int movieId, string username)
         {
             using (var context = new SqlServerSep6Context())
             {
-                var exists = context.LikedMovies.Any(i => i.Movie.Id == movieId);
+                var exists = context.LikedMovies.Any(i => i.Movie.Id == movieId && i.Username.Equals(username));
 
                 return exists;
             }

@@ -249,8 +249,8 @@ else
         {
             hasUserVoted = false;
         }
-        movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
-        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
+        movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId, currentUser.user.Username);
+        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId, currentUser.user.Username);
 
         isLoading = false;
     }
@@ -259,26 +259,26 @@ else
     private void AddToLiked()
     {
         likedMovieLogic.addMoviesToLiked(currentUser.user.Username, movieId);
-        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
+        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId, currentUser.user.Username);
     }
 
     private void AddToWatchList()
     {
 
         watchMovieLogic.addMovieToWatchlist(currentUser.user.Username, movieId);
-        movieInWatchlist = likedMovieLogic.isMovieInLikedDB(movieId);
+        movieInWatchlist = likedMovieLogic.isMovieInLikedDB(movieId, currentUser.user.Username);
     }
 
     private void RemoveFromLiked()
     {
         likedMovieLogic.deleteMoviesFromLiked(currentUser.user.Username, movieId);
-        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId);
+        movieInLikedList = likedMovieLogic.isMovieInLikedDB(movieId, currentUser.user.Username);
     }
 
     private void RemoveFromWatchList()
     {
         watchMovieLogic.removeMovieFromWatchlist(currentUser.user.Username, movieId);
-        movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId);
+        movieInWatchlist = watchMovieLogic.isMovieWatchlistInDB(movieId, currentUser.user.Username);
     }
 
     private async Task RateMovie(int rate)

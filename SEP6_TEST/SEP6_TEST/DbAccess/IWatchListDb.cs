@@ -13,7 +13,7 @@ namespace SEP6_TEST.DbAccess
         public void removeMovieFromWatchList(string username, int movieId);
         public Task<List<MovieDTO>> GetAllMoviesInWatchList(string username);
         public bool IsMovieInWatchlist(int id);
-        public bool islikedMovieInWatchlistDB(int movieId);
+        public bool islikedMovieInWatchlistDB(int movieId, string username);
 
         public Task addWatchlistMovieToList(int movieId);
 

@@ -14,7 +14,7 @@ namespace SEP6_TEST.DbAccess
         public Task<List<MovieDTO>> getAllLikedMovies(string username);
         public bool IsMovieInLikedlist(int id);
 
-        public bool islikedMovieInLikedDB(int movieId);
+        public bool islikedMovieInLikedDB(int movieId, string username);
         public void addLikedMovieToList(int movieId);
 
         public void deleteLikedMovieFromList(int movieId);

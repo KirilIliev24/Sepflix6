@@ -13,6 +13,6 @@ namespace SEP6_TEST.BussinesLogic
 
         public Task<List<MovieDTO>> getAllMoviesInWatchlist(string username);
 
-        public bool isMovieWatchlistInDB(int movieId);
+        public bool isMovieWatchlistInDB(int movieId, string username);
     }
 }

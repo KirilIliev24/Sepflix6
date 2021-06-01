@@ -19,7 +19,7 @@ namespace SEP6_TEST.BussinesLogic
         public bool addMovieToWatchlist(string username, int movieId)
         {
 
-            var exists = WatchListDb.islikedMovieInWatchlistDB(movieId);
+            var exists = WatchListDb.islikedMovieInWatchlistDB(movieId, username);
             if (!exists)
             {
                 WatchListDb.addMovieToWatchlist(username, movieId);
@@ -40,9 +40,9 @@ namespace SEP6_TEST.BussinesLogic
             return await WatchListDb.GetAllMoviesInWatchList(username);
         }
 
-        public bool isMovieWatchlistInDB(int movieId)
+        public bool isMovieWatchlistInDB(int movieId, string username)
         {
-            var isInDb = WatchListDb.islikedMovieInWatchlistDB(movieId);
+            var isInDb = WatchListDb.islikedMovieInWatchlistDB(movieId, username);
             return isInDb;
         }
 
@@ -50,7 +50,7 @@ namespace SEP6_TEST.BussinesLogic
         {
             WatchListDb.removeMovieFromWatchList(username, movieId);
 
-            var exists = WatchListDb.islikedMovieInWatchlistDB(movieId);
+            var exists = WatchListDb.islikedMovieInWatchlistDB(movieId, username);
 
             if (!exists)
             {
