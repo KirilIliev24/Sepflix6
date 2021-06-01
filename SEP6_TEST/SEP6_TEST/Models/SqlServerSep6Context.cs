@@ -29,7 +29,7 @@ namespace SEP6_TEST.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=35.240.12.17;Initial Catalog=SqlServerSep6;User ID=sqlserver;Password=kiril2403;");
+                optionsBuilder.UseSqlServer("Data Source=34.77.68.9;Initial Catalog=Sep6Database;User ID=sqlserver;Password=kiril2403;");
             }
         }
 
